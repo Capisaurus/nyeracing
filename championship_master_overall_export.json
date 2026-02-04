@@ -1,0 +1,649 @@
+{
+    "version": 1,
+    "current_round": 1,
+    "drivers": {
+        "76561198341529089": {
+            "name": "L. Zelaya",
+            "team_id": "team_scuderia_ferrari_hp",
+            "number": "",
+            "country": "",
+            "guid": "76561198341529089",
+            "penalty_points": 0.0
+        },
+        "76561198072014624": {
+            "name": "D. Medina",
+            "team_id": "team_oracle_red_bull_racing",
+            "number": "",
+            "country": "",
+            "guid": "76561198072014624",
+            "penalty_points": 0.0
+        },
+        "76561198347359581": {
+            "name": "Raul Pacheco",
+            "team_id": "",
+            "number": "",
+            "country": "",
+            "guid": "76561198347359581",
+            "penalty_points": 0.0
+        },
+        "76561198106471603": {
+            "name": "F. Chiarotti",
+            "team_id": "team_bwt_alpine_f1_team",
+            "number": "",
+            "country": "",
+            "guid": "76561198106471603",
+            "penalty_points": 0.0
+        },
+        "76561198962529406": {
+            "name": "FRANCO DURAN sentey",
+            "team_id": "",
+            "number": "",
+            "country": "",
+            "guid": "76561198962529406",
+            "penalty_points": 0.0
+        },
+        "76561198047561565": {
+            "name": "Carlos Herrarte",
+            "team_id": "",
+            "number": "",
+            "country": "",
+            "guid": "76561198047561565",
+            "penalty_points": 0.0
+        },
+        "76561199098409330": {
+            "name": "j.hernandez",
+            "team_id": "",
+            "number": "",
+            "country": "",
+            "guid": "76561199098409330",
+            "penalty_points": 0.0
+        },
+        "76561198133919909": {
+            "name": "Marcelo Barquin",
+            "team_id": "",
+            "number": "",
+            "country": "",
+            "guid": "76561198133919909",
+            "penalty_points": 0.0
+        },
+        "76561199722435247": {
+            "name": "A. Rendon",
+            "team_id": "",
+            "number": "",
+            "country": "",
+            "guid": "76561199722435247",
+            "penalty_points": 0.0
+        },
+        "76561198260597293": {
+            "name": "Yeison Lopez",
+            "team_id": "",
+            "number": "",
+            "country": "",
+            "guid": "76561198260597293",
+            "penalty_points": 0.0
+        },
+        "76561198108075511": {
+            "name": "U. Bolaños",
+            "team_id": "team_scuderia_ferrari_hp",
+            "number": "",
+            "country": "",
+            "guid": "76561198108075511",
+            "penalty_points": 0.0
+        },
+        "76561198130584179": {
+            "name": "P. Verboonen",
+            "team_id": "team_bmw_motorsport",
+            "number": "",
+            "country": "",
+            "guid": "76561198130584179",
+            "penalty_points": 0.0
+        },
+        "76561199051748324": {
+            "name": "S. Garza",
+            "team_id": "team_bmw_motorsport",
+            "number": "",
+            "country": "",
+            "guid": "76561199051748324",
+            "penalty_points": 0.0
+        },
+        "76561199247430395": {
+            "name": "M. Chávez",
+            "team_id": "team_visa_cash_app_racing_bulls_f1_team",
+            "number": "",
+            "country": "",
+            "guid": "76561199247430395",
+            "penalty_points": 0.0
+        },
+        "76561198119665483": {
+            "name": "A. Arreola",
+            "team_id": "team_apx-gp",
+            "number": "",
+            "country": "",
+            "guid": "76561198119665483",
+            "penalty_points": 0.0
+        },
+        "76561199179027753": {
+            "name": "C. Ramírez",
+            "team_id": "",
+            "number": "",
+            "country": "",
+            "guid": "76561199179027753",
+            "penalty_points": 0.0
+        },
+        "76561198260894482": {
+            "name": "Alan Gonzalez",
+            "team_id": "",
+            "number": "",
+            "country": "",
+            "guid": "76561198260894482",
+            "penalty_points": 0.0
+        },
+        "76561198998489417": {
+            "name": "M. Gutiérrez",
+            "team_id": "team_visa_cash_app_racing_bulls_f1_team",
+            "number": "",
+            "country": "",
+            "guid": "76561198998489417",
+            "penalty_points": 0.0
+        }
+    },
+    "teams": {
+        "team_scuderia_ferrari_hp": {
+            "name": "Scuderia Ferrari HP",
+            "color": ""
+        },
+        "team_oracle_red_bull_racing": {
+            "name": "Oracle Red Bull Racing",
+            "color": ""
+        },
+        "team_bwt_alpine_f1_team": {
+            "name": "BWT Alpine F1 Team",
+            "color": ""
+        },
+        "team_apx-gp": {
+            "name": "APX-GP",
+            "color": ""
+        },
+        "team_mercedes-amg_petronas_f1_team": {
+            "name": "Mercedes-AMG Petronas F1 Team",
+            "color": ""
+        },
+        "team_bmw_motorsport": {
+            "name": "BMW Motorsport",
+            "color": ""
+        },
+        "team_atlassian_williams_racing": {
+            "name": "Atlassian Williams Racing",
+            "color": ""
+        },
+        "team_stake_f1_team_kick_sauber": {
+            "name": "Stake F1 Team Kick Sauber",
+            "color": ""
+        },
+        "team_visa_cash_app_racing_bulls_f1_team": {
+            "name": "Visa Cash App Racing Bulls F1 Team",
+            "color": ""
+        }
+    },
+    "races": [
+        {
+            "id": "1",
+            "name": "F1 TEST PRE-TEMPORADA - AUSTRALIA",
+            "round": 1,
+            "date": "",
+            "track": "",
+            "planned": false,
+            "dotd_driver_id": "",
+            "results": [
+                {
+                    "driver_id": "76561198341529089",
+                    "team_id": "team_scuderia_ferrari_hp",
+                    "position": 1,
+                    "points": 25.0,
+                    "status": "nan",
+                    "guid": "76561198341529089",
+                    "name": "L. Zelaya",
+                    "attendance": "green"
+                },
+                {
+                    "driver_id": "76561198072014624",
+                    "team_id": "team_oracle_red_bull_racing",
+                    "position": 2,
+                    "points": 18.0,
+                    "status": "nan",
+                    "guid": "76561198072014624",
+                    "name": "D. Medina",
+                    "attendance": "green"
+                },
+                {
+                    "driver_id": "76561198347359581",
+                    "team_id": "",
+                    "position": 3,
+                    "points": 15.0,
+                    "status": "nan",
+                    "guid": "76561198347359581",
+                    "name": "Raul Pacheco",
+                    "attendance": "green"
+                },
+                {
+                    "driver_id": "76561198106471603",
+                    "team_id": "team_bwt_alpine_f1_team",
+                    "position": 4,
+                    "points": 12.0,
+                    "status": "nan",
+                    "guid": "76561198106471603",
+                    "name": "F. Chiarotti",
+                    "attendance": "green"
+                },
+                {
+                    "driver_id": "76561198962529406",
+                    "team_id": "",
+                    "position": 5,
+                    "points": 10.0,
+                    "status": "nan",
+                    "guid": "76561198962529406",
+                    "name": "FRANCO DURAN sentey",
+                    "attendance": "green"
+                },
+                {
+                    "driver_id": "76561198047561565",
+                    "team_id": "",
+                    "position": 6,
+                    "points": 8.0,
+                    "status": "nan",
+                    "guid": "76561198047561565",
+                    "name": "Carlos Herrarte",
+                    "attendance": "green"
+                },
+                {
+                    "driver_id": "76561199098409330",
+                    "team_id": "",
+                    "position": 7,
+                    "points": 6.0,
+                    "status": "nan",
+                    "guid": "76561199098409330",
+                    "name": "j.hernandez",
+                    "attendance": "green"
+                },
+                {
+                    "driver_id": "76561198133919909",
+                    "team_id": "",
+                    "position": 8,
+                    "points": 4.0,
+                    "status": "NC",
+                    "guid": "76561198133919909",
+                    "name": "Marcelo Barquin",
+                    "attendance": "green"
+                }
+            ],
+            "season_id": "",
+            "season_name": ""
+        },
+        {
+            "id": "season2_1",
+            "name": "2° MINI CHAMP - ROUND 5 - INTERLAGOS",
+            "round": 1,
+            "date": "",
+            "track": "",
+            "planned": false,
+            "dotd_driver_id": "",
+            "results": [
+                {
+                    "driver_id": "76561198347359581",
+                    "team_id": "",
+                    "position": 1,
+                    "points": 25.0,
+                    "status": "",
+                    "guid": "76561198347359581",
+                    "name": "Raul Pacheco",
+                    "attendance": "green"
+                },
+                {
+                    "driver_id": "76561198341529089",
+                    "team_id": "team_apx-gp",
+                    "position": 2,
+                    "points": 18.0,
+                    "status": "",
+                    "guid": "76561198341529089",
+                    "name": "L. Zelaya",
+                    "attendance": "green"
+                },
+                {
+                    "driver_id": "76561199722435247",
+                    "team_id": "",
+                    "position": 3,
+                    "points": 15.0,
+                    "status": "",
+                    "guid": "76561199722435247",
+                    "name": "A. Rendon",
+                    "attendance": "green"
+                },
+                {
+                    "driver_id": "76561198047561565",
+                    "team_id": "",
+                    "position": 4,
+                    "points": 12.0,
+                    "status": "",
+                    "guid": "76561198047561565",
+                    "name": "Carlos Herrarte",
+                    "attendance": "green"
+                },
+                {
+                    "driver_id": "76561198260597293",
+                    "team_id": "",
+                    "position": 5,
+                    "points": 10.0,
+                    "status": "",
+                    "guid": "76561198260597293",
+                    "name": "Yeison Lopez",
+                    "attendance": "green"
+                },
+                {
+                    "driver_id": "76561198962529406",
+                    "team_id": "",
+                    "position": 6,
+                    "points": 8.0,
+                    "status": "",
+                    "guid": "76561198962529406",
+                    "name": "FRANCO DURAN sentey",
+                    "attendance": "green"
+                }
+            ],
+            "season_id": "",
+            "season_name": ""
+        },
+        {
+            "id": "2",
+            "name": "F1 2025 - ROUND 11 - QATAR",
+            "round": 2,
+            "date": "",
+            "track": "",
+            "planned": false,
+            "dotd_driver_id": "",
+            "results": [
+                {
+                    "driver_id": "76561198108075511",
+                    "team_id": "team_scuderia_ferrari_hp",
+                    "position": 1,
+                    "points": 25.0,
+                    "status": "nan",
+                    "guid": "76561198108075511",
+                    "name": "U. Bolaños",
+                    "attendance": "green"
+                },
+                {
+                    "driver_id": "76561198072014624",
+                    "team_id": "team_mercedes-amg_petronas_f1_team",
+                    "position": 2,
+                    "points": 18.0,
+                    "status": "nan",
+                    "guid": "76561198072014624",
+                    "name": "D. Medina",
+                    "attendance": "green"
+                },
+                {
+                    "driver_id": "76561198130584179",
+                    "team_id": "team_bmw_motorsport",
+                    "position": 3,
+                    "points": 15.0,
+                    "status": "nan",
+                    "guid": "76561198130584179",
+                    "name": "P. Verboonen",
+                    "attendance": "green"
+                },
+                {
+                    "driver_id": "76561198133919909",
+                    "team_id": "team_atlassian_williams_racing",
+                    "position": 4,
+                    "points": 12.0,
+                    "status": "nan",
+                    "guid": "76561198133919909",
+                    "name": "M. Barquin",
+                    "attendance": "green"
+                },
+                {
+                    "driver_id": "76561198341529089",
+                    "team_id": "team_apx-gp",
+                    "position": 5,
+                    "points": 10.0,
+                    "status": "nan",
+                    "guid": "76561198341529089",
+                    "name": "L. Zelaya",
+                    "attendance": "green"
+                },
+                {
+                    "driver_id": "76561199051748324",
+                    "team_id": "team_bmw_motorsport",
+                    "position": 6,
+                    "points": 8.0,
+                    "status": "nan",
+                    "guid": "76561199051748324",
+                    "name": "S. Garza",
+                    "attendance": "green"
+                },
+                {
+                    "driver_id": "76561199098409330",
+                    "team_id": "team_stake_f1_team_kick_sauber",
+                    "position": 7,
+                    "points": 6.0,
+                    "status": "nan",
+                    "guid": "76561199098409330",
+                    "name": "J. Hernández",
+                    "attendance": "green"
+                },
+                {
+                    "driver_id": "76561198047561565",
+                    "team_id": "team_atlassian_williams_racing",
+                    "position": 8,
+                    "points": 4.0,
+                    "status": "nan",
+                    "guid": "76561198047561565",
+                    "name": "C. Herrarte",
+                    "attendance": "green"
+                },
+                {
+                    "driver_id": "76561199247430395",
+                    "team_id": "team_visa_cash_app_racing_bulls_f1_team",
+                    "position": 9,
+                    "points": 2.0,
+                    "status": "nan",
+                    "guid": "76561199247430395",
+                    "name": "M. Chávez",
+                    "attendance": "green"
+                },
+                {
+                    "driver_id": "76561198119665483",
+                    "team_id": "team_apx-gp",
+                    "position": 10,
+                    "points": 1.0,
+                    "status": "nan",
+                    "guid": "76561198119665483",
+                    "name": "A. Arreola",
+                    "attendance": "green"
+                },
+                {
+                    "driver_id": "76561199179027753",
+                    "team_id": "",
+                    "position": 11,
+                    "points": 0.0,
+                    "status": "nan",
+                    "guid": "76561199179027753",
+                    "name": "C. Ramírez",
+                    "attendance": "green"
+                },
+                {
+                    "driver_id": "76561198260894482",
+                    "team_id": "",
+                    "position": 12,
+                    "points": 0.0,
+                    "status": "NC",
+                    "guid": "76561198260894482",
+                    "name": "Alan Gonzalez",
+                    "attendance": "green"
+                },
+                {
+                    "driver_id": "76561198998489417",
+                    "team_id": "team_visa_cash_app_racing_bulls_f1_team",
+                    "position": 13,
+                    "points": 0.0,
+                    "status": "NC",
+                    "guid": "76561198998489417",
+                    "name": "M. Gutiérrez",
+                    "attendance": "green"
+                }
+            ],
+            "season_id": "",
+            "season_name": ""
+        },
+        {
+            "id": "season3_1",
+            "name": "F1 2025 - ROUND 11 - QATAR",
+            "round": 1,
+            "date": "",
+            "track": "",
+            "planned": false,
+            "dotd_driver_id": "",
+            "results": [
+                {
+                    "driver_id": "76561198108075511",
+                    "team_id": "team_scuderia_ferrari_hp",
+                    "position": 1,
+                    "points": 25.0,
+                    "status": "nan",
+                    "guid": "76561198108075511",
+                    "name": "U. Bolaños",
+                    "attendance": "green"
+                },
+                {
+                    "driver_id": "76561198072014624",
+                    "team_id": "team_mercedes-amg_petronas_f1_team",
+                    "position": 2,
+                    "points": 18.0,
+                    "status": "nan",
+                    "guid": "76561198072014624",
+                    "name": "D. Medina",
+                    "attendance": "green"
+                },
+                {
+                    "driver_id": "76561198130584179",
+                    "team_id": "team_bmw_motorsport",
+                    "position": 3,
+                    "points": 15.0,
+                    "status": "nan",
+                    "guid": "76561198130584179",
+                    "name": "P. Verboonen",
+                    "attendance": "green"
+                },
+                {
+                    "driver_id": "76561198133919909",
+                    "team_id": "team_atlassian_williams_racing",
+                    "position": 4,
+                    "points": 12.0,
+                    "status": "nan",
+                    "guid": "76561198133919909",
+                    "name": "M. Barquin",
+                    "attendance": "green"
+                },
+                {
+                    "driver_id": "76561198341529089",
+                    "team_id": "team_apx-gp",
+                    "position": 5,
+                    "points": 10.0,
+                    "status": "nan",
+                    "guid": "76561198341529089",
+                    "name": "L. Zelaya",
+                    "attendance": "green"
+                },
+                {
+                    "driver_id": "76561199051748324",
+                    "team_id": "team_bmw_motorsport",
+                    "position": 6,
+                    "points": 8.0,
+                    "status": "nan",
+                    "guid": "76561199051748324",
+                    "name": "S. Garza",
+                    "attendance": "green"
+                },
+                {
+                    "driver_id": "76561199098409330",
+                    "team_id": "team_stake_f1_team_kick_sauber",
+                    "position": 7,
+                    "points": 6.0,
+                    "status": "nan",
+                    "guid": "76561199098409330",
+                    "name": "J. Hernández",
+                    "attendance": "green"
+                },
+                {
+                    "driver_id": "76561198047561565",
+                    "team_id": "team_atlassian_williams_racing",
+                    "position": 8,
+                    "points": 4.0,
+                    "status": "nan",
+                    "guid": "76561198047561565",
+                    "name": "C. Herrarte",
+                    "attendance": "green"
+                },
+                {
+                    "driver_id": "76561199247430395",
+                    "team_id": "team_visa_cash_app_racing_bulls_f1_team",
+                    "position": 9,
+                    "points": 2.0,
+                    "status": "nan",
+                    "guid": "76561199247430395",
+                    "name": "M. Chávez",
+                    "attendance": "green"
+                },
+                {
+                    "driver_id": "76561198119665483",
+                    "team_id": "team_apx-gp",
+                    "position": 10,
+                    "points": 1.0,
+                    "status": "nan",
+                    "guid": "76561198119665483",
+                    "name": "A. Arreola",
+                    "attendance": "green"
+                },
+                {
+                    "driver_id": "76561199179027753",
+                    "team_id": "",
+                    "position": 11,
+                    "points": 0.0,
+                    "status": "nan",
+                    "guid": "76561199179027753",
+                    "name": "C. Ramírez",
+                    "attendance": "green"
+                },
+                {
+                    "driver_id": "76561198260894482",
+                    "team_id": "",
+                    "position": 12,
+                    "points": 0.0,
+                    "status": "NC",
+                    "guid": "76561198260894482",
+                    "name": "Alan Gonzalez",
+                    "attendance": "green"
+                },
+                {
+                    "driver_id": "76561198998489417",
+                    "team_id": "team_visa_cash_app_racing_bulls_f1_team",
+                    "position": 13,
+                    "points": 0.0,
+                    "status": "NC",
+                    "guid": "76561198998489417",
+                    "name": "M. Gutiérrez",
+                    "attendance": "green"
+                }
+            ],
+            "season_id": "",
+            "season_name": ""
+        }
+    ],
+    "race_id_counter": 1,
+    "standings": [],
+    "standings_updated_at": null,
+    "attendance": {},
+    "penalty_points_by_round": {},
+    "penalty_max": 0.0,
+    "updated_at": "2026-02-04T13:17:46"
+}
