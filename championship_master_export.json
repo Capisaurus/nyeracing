@@ -2,95 +2,31 @@
     "version": 1,
     "current_round": 3,
     "drivers": {
-        "76561198108075511": {
-            "name": "U. Bolaños",
-            "team_id": "",
-            "number": "",
-            "country": "",
-            "guid": "76561198108075511",
-            "penalty_points": 0.0
-        },
-        "76561198072014624": {
-            "name": "D. Medina",
-            "team_id": "",
-            "number": "",
-            "country": "",
-            "guid": "76561198072014624",
-            "penalty_points": 0.0
-        },
-        "76561198130584179": {
-            "name": "P. Verboonen",
-            "team_id": "",
-            "number": "",
-            "country": "",
-            "guid": "76561198130584179",
-            "penalty_points": 0.0
-        },
-        "76561198133919909": {
-            "name": "M. Barquin",
-            "team_id": "",
-            "number": "",
-            "country": "",
-            "guid": "76561198133919909",
-            "penalty_points": 0.0
-        },
-        "76561198341529089": {
-            "name": "L. Zelaya",
-            "team_id": "",
-            "number": "",
-            "country": "",
-            "guid": "76561198341529089",
-            "penalty_points": 0.0
-        },
-        "76561199051748324": {
-            "name": "S. Garza",
-            "team_id": "",
-            "number": "",
-            "country": "",
-            "guid": "76561199051748324",
-            "penalty_points": 0.0
-        },
-        "76561199098409330": {
-            "name": "J. Hernández",
-            "team_id": "",
-            "number": "",
-            "country": "",
-            "guid": "76561199098409330",
-            "penalty_points": 0.0
-        },
-        "76561198047561565": {
-            "name": "C. Herrarte",
-            "team_id": "",
-            "number": "",
-            "country": "",
-            "guid": "76561198047561565",
-            "penalty_points": 0.0
-        },
-        "76561199247430395": {
-            "name": "M. Chávez",
-            "team_id": "",
-            "number": "",
-            "country": "",
-            "guid": "76561199247430395",
-            "penalty_points": 0.0
-        },
-        "76561198119665483": {
-            "name": "A. Arreola",
-            "team_id": "",
-            "number": "",
-            "country": "",
-            "guid": "76561198119665483",
-            "penalty_points": 0.0
-        },
-        "76561199179027753": {
+        "driver_c_ramrez": {
             "name": "C. Ramírez",
-            "team_id": "",
+            "team_id": "team_oracle_red_bull_racing",
             "number": "",
             "country": "",
             "guid": "76561199179027753",
             "penalty_points": 0.0
         },
-        "76561198260894482": {
+        "driver_a_rendn": {
+            "name": "A. Rendón",
+            "team_id": "team_oracle_red_bull_racing",
+            "number": "",
+            "country": "",
+            "guid": "76561199722435247",
+            "penalty_points": 0.0
+        },
+        "driver_u_bolaos": {
+            "name": "U. Bolaños",
+            "team_id": "team_scuderia_ferrari_hp",
+            "number": "",
+            "country": "",
+            "guid": "76561198108075511",
+            "penalty_points": 0.0
+        },
+        "driver_alan_gonzalez": {
             "name": "Alan Gonzalez",
             "team_id": "",
             "number": "",
@@ -98,31 +34,135 @@
             "guid": "76561198260894482",
             "penalty_points": 0.0
         },
-        "76561198998489417": {
+        "driver_a_arreola": {
+            "name": "A. Arreola",
+            "team_id": "team_apx-gp",
+            "number": "",
+            "country": "",
+            "guid": "76561198119665483",
+            "penalty_points": 0.0
+        },
+        "driver_l_zelaya": {
+            "name": "L. Zelaya",
+            "team_id": "team_apx-gp",
+            "number": "",
+            "country": "",
+            "guid": "76561198341529089",
+            "penalty_points": 0.0
+        },
+        "driver_d_romeo": {
+            "name": "D. Romeo",
+            "team_id": "team_mercedes-amg_petronas_f1_team",
+            "number": "",
+            "country": "",
+            "guid": "76561198870043643",
+            "penalty_points": 0.0
+        },
+        "driver_d_medina": {
+            "name": "D. Medina",
+            "team_id": "team_mercedes-amg_petronas_f1_team",
+            "number": "",
+            "country": "",
+            "guid": "76561198072014624",
+            "penalty_points": 0.0
+        },
+        "driver_m_gutirrez": {
             "name": "M. Gutiérrez",
-            "team_id": "",
+            "team_id": "team_visa_cash_app_racing_bulls_f1_team",
             "number": "",
             "country": "",
             "guid": "76561198998489417",
             "penalty_points": 0.0
         },
-        "76561198347359581": {
-            "name": "Raul Pacheco",
-            "team_id": "",
+        "driver_m_chvez": {
+            "name": "M. Chávez",
+            "team_id": "team_visa_cash_app_racing_bulls_f1_team",
             "number": "",
             "country": "",
-            "guid": "76561198347359581",
+            "guid": "76561199247430395",
             "penalty_points": 0.0
         },
-        "76561198106471603": {
+        "driver_c_herrarte": {
+            "name": "C. Herrarte",
+            "team_id": "team_atlassian_williams_racing",
+            "number": "",
+            "country": "",
+            "guid": "76561198047561565",
+            "penalty_points": 0.0
+        },
+        "driver_m_barquin": {
+            "name": "M. Barquin",
+            "team_id": "team_atlassian_williams_racing",
+            "number": "",
+            "country": "",
+            "guid": "76561198133919909",
+            "penalty_points": 0.0
+        },
+        "driver_j_hernndez": {
+            "name": "J. Hernández",
+            "team_id": "team_stake_f1_team_kick_sauber",
+            "number": "",
+            "country": "",
+            "guid": "76561199098409330",
+            "penalty_points": 0.0
+        },
+        "driver_m_flores": {
+            "name": "M. Flores",
+            "team_id": "team_aston_martin_aramco_f1_team",
+            "number": "",
+            "country": "",
+            "guid": "76561198394616029",
+            "penalty_points": 0.0
+        },
+        "driver_m_martnez": {
+            "name": "M. Martínez",
+            "team_id": "team_aston_martin_aramco_f1_team",
+            "number": "",
+            "country": "",
+            "guid": "76561199142452939",
+            "penalty_points": 0.0
+        },
+        "driver_f_chiarotti": {
             "name": "F. Chiarotti",
-            "team_id": "",
+            "team_id": "team_bwt_alpine_f1_team",
             "number": "",
             "country": "",
             "guid": "76561198106471603",
             "penalty_points": 0.0
         },
-        "76561198962529406": {
+        "driver_a_lpez": {
+            "name": "A. López",
+            "team_id": "team_moneygram_haas_f1_team",
+            "number": "",
+            "country": "",
+            "guid": "76561198971095315",
+            "penalty_points": 0.0
+        },
+        "driver_r_mondragn": {
+            "name": "R. Mondragón",
+            "team_id": "team_moneygram_haas_f1_team",
+            "number": "",
+            "country": "",
+            "guid": "76561198827243927",
+            "penalty_points": 0.0
+        },
+        "driver_s_garza": {
+            "name": "S. Garza",
+            "team_id": "team_bmw_motorsport",
+            "number": "",
+            "country": "",
+            "guid": "76561199051748324",
+            "penalty_points": 0.0
+        },
+        "driver_p_verboonen": {
+            "name": "P. Verboonen",
+            "team_id": "team_bmw_motorsport",
+            "number": "",
+            "country": "",
+            "guid": "76561198130584179",
+            "penalty_points": 0.0
+        },
+        "driver_franco_duran_sentey": {
             "name": "FRANCO DURAN sentey",
             "team_id": "",
             "number": "",
@@ -130,15 +170,15 @@
             "guid": "76561198962529406",
             "penalty_points": 0.0
         },
-        "76561199722435247": {
-            "name": "A. Rendon",
+        "driver_raul_pacheco": {
+            "name": "Raul Pacheco",
             "team_id": "",
             "number": "",
             "country": "",
-            "guid": "76561199722435247",
+            "guid": "76561198347359581",
             "penalty_points": 0.0
         },
-        "76561198260597293": {
+        "driver_yeison_lopez": {
             "name": "Yeison Lopez",
             "team_id": "",
             "number": "",
@@ -147,7 +187,52 @@
             "penalty_points": 0.0
         }
     },
-    "teams": {},
+    "teams": {
+        "team_oracle_red_bull_racing": {
+            "name": "Oracle Red Bull Racing",
+            "color": ""
+        },
+        "team_scuderia_ferrari_hp": {
+            "name": "Scuderia Ferrari HP",
+            "color": ""
+        },
+        "team_apx-gp": {
+            "name": "APX-GP",
+            "color": ""
+        },
+        "team_mercedes-amg_petronas_f1_team": {
+            "name": "Mercedes-AMG Petronas F1 Team",
+            "color": ""
+        },
+        "team_visa_cash_app_racing_bulls_f1_team": {
+            "name": "Visa Cash App Racing Bulls F1 Team",
+            "color": ""
+        },
+        "team_atlassian_williams_racing": {
+            "name": "Atlassian Williams Racing",
+            "color": ""
+        },
+        "team_stake_f1_team_kick_sauber": {
+            "name": "Stake F1 Team Kick Sauber",
+            "color": ""
+        },
+        "team_aston_martin_aramco_f1_team": {
+            "name": "Aston Martin Aramco F1 Team",
+            "color": ""
+        },
+        "team_bwt_alpine_f1_team": {
+            "name": "BWT Alpine F1 Team",
+            "color": ""
+        },
+        "team_moneygram_haas_f1_team": {
+            "name": "MoneyGram Haas F1 Team",
+            "color": ""
+        },
+        "team_bmw_motorsport": {
+            "name": "BMW Motorsport",
+            "color": ""
+        }
+    },
     "races": [
         {
             "id": "1",
@@ -158,7 +243,7 @@
             "planned": false,
             "results": [
                 {
-                    "driver_id": "76561198341529089",
+                    "driver_id": "driver_l_zelaya",
                     "position": 1,
                     "points": 25.0,
                     "status": "nan",
@@ -167,7 +252,7 @@
                     "attendance": "green"
                 },
                 {
-                    "driver_id": "76561198072014624",
+                    "driver_id": "driver_d_medina",
                     "position": 2,
                     "points": 18.0,
                     "status": "nan",
@@ -176,7 +261,7 @@
                     "attendance": "green"
                 },
                 {
-                    "driver_id": "76561198347359581",
+                    "driver_id": "driver_raul_pacheco",
                     "position": 3,
                     "points": 15.0,
                     "status": "nan",
@@ -185,7 +270,7 @@
                     "attendance": "green"
                 },
                 {
-                    "driver_id": "76561198106471603",
+                    "driver_id": "driver_f_chiarotti",
                     "position": 4,
                     "points": 12.0,
                     "status": "nan",
@@ -194,7 +279,7 @@
                     "attendance": "green"
                 },
                 {
-                    "driver_id": "76561198962529406",
+                    "driver_id": "driver_franco_duran_sentey",
                     "position": 5,
                     "points": 10.0,
                     "status": "nan",
@@ -203,7 +288,7 @@
                     "attendance": "green"
                 },
                 {
-                    "driver_id": "76561198047561565",
+                    "driver_id": "driver_c_herrarte",
                     "position": 6,
                     "points": 8.0,
                     "status": "nan",
@@ -212,7 +297,7 @@
                     "attendance": "green"
                 },
                 {
-                    "driver_id": "76561199098409330",
+                    "driver_id": "driver_j_hernndez",
                     "position": 7,
                     "points": 6.0,
                     "status": "nan",
@@ -221,7 +306,7 @@
                     "attendance": "green"
                 },
                 {
-                    "driver_id": "76561198133919909",
+                    "driver_id": "driver_m_barquin",
                     "position": 8,
                     "points": 4.0,
                     "status": "NC",
@@ -240,7 +325,7 @@
             "planned": false,
             "results": [
                 {
-                    "driver_id": "76561198347359581",
+                    "driver_id": "driver_raul_pacheco",
                     "position": 1,
                     "points": 25.0,
                     "status": "",
@@ -249,7 +334,7 @@
                     "attendance": "green"
                 },
                 {
-                    "driver_id": "76561198341529089",
+                    "driver_id": "driver_l_zelaya",
                     "position": 2,
                     "points": 18.0,
                     "status": "",
@@ -258,7 +343,7 @@
                     "attendance": "green"
                 },
                 {
-                    "driver_id": "76561199722435247",
+                    "driver_id": "driver_a_rendn",
                     "position": 3,
                     "points": 15.0,
                     "status": "",
@@ -267,7 +352,7 @@
                     "attendance": "green"
                 },
                 {
-                    "driver_id": "76561198047561565",
+                    "driver_id": "driver_c_herrarte",
                     "position": 4,
                     "points": 12.0,
                     "status": "",
@@ -276,7 +361,7 @@
                     "attendance": "green"
                 },
                 {
-                    "driver_id": "76561198260597293",
+                    "driver_id": "driver_yeison_lopez",
                     "position": 5,
                     "points": 10.0,
                     "status": "",
@@ -285,7 +370,7 @@
                     "attendance": "green"
                 },
                 {
-                    "driver_id": "76561198962529406",
+                    "driver_id": "driver_franco_duran_sentey",
                     "position": 6,
                     "points": 8.0,
                     "status": "",
@@ -304,7 +389,7 @@
             "planned": false,
             "results": [
                 {
-                    "driver_id": "76561198108075511",
+                    "driver_id": "driver_u_bolaos",
                     "position": 1,
                     "points": 25.0,
                     "status": "nan",
@@ -313,7 +398,7 @@
                     "attendance": "green"
                 },
                 {
-                    "driver_id": "76561198072014624",
+                    "driver_id": "driver_d_medina",
                     "position": 2,
                     "points": 18.0,
                     "status": "nan",
@@ -322,7 +407,7 @@
                     "attendance": "green"
                 },
                 {
-                    "driver_id": "76561198130584179",
+                    "driver_id": "driver_p_verboonen",
                     "position": 3,
                     "points": 15.0,
                     "status": "nan",
@@ -331,7 +416,7 @@
                     "attendance": "green"
                 },
                 {
-                    "driver_id": "76561198133919909",
+                    "driver_id": "driver_m_barquin",
                     "position": 4,
                     "points": 12.0,
                     "status": "nan",
@@ -340,7 +425,7 @@
                     "attendance": "green"
                 },
                 {
-                    "driver_id": "76561198341529089",
+                    "driver_id": "driver_l_zelaya",
                     "position": 5,
                     "points": 10.0,
                     "status": "nan",
@@ -349,7 +434,7 @@
                     "attendance": "green"
                 },
                 {
-                    "driver_id": "76561199051748324",
+                    "driver_id": "driver_s_garza",
                     "position": 6,
                     "points": 8.0,
                     "status": "nan",
@@ -358,7 +443,7 @@
                     "attendance": "green"
                 },
                 {
-                    "driver_id": "76561199098409330",
+                    "driver_id": "driver_j_hernndez",
                     "position": 7,
                     "points": 6.0,
                     "status": "nan",
@@ -367,7 +452,7 @@
                     "attendance": "green"
                 },
                 {
-                    "driver_id": "76561198047561565",
+                    "driver_id": "driver_c_herrarte",
                     "position": 8,
                     "points": 4.0,
                     "status": "nan",
@@ -376,7 +461,7 @@
                     "attendance": "green"
                 },
                 {
-                    "driver_id": "76561199247430395",
+                    "driver_id": "driver_m_chvez",
                     "position": 9,
                     "points": 2.0,
                     "status": "nan",
@@ -385,7 +470,7 @@
                     "attendance": "green"
                 },
                 {
-                    "driver_id": "76561198119665483",
+                    "driver_id": "driver_a_arreola",
                     "position": 10,
                     "points": 1.0,
                     "status": "nan",
@@ -394,7 +479,7 @@
                     "attendance": "green"
                 },
                 {
-                    "driver_id": "76561199179027753",
+                    "driver_id": "driver_c_ramrez",
                     "position": 11,
                     "points": 0.0,
                     "status": "nan",
@@ -403,7 +488,7 @@
                     "attendance": "green"
                 },
                 {
-                    "driver_id": "76561198260894482",
+                    "driver_id": "driver_alan_gonzalez",
                     "position": 12,
                     "points": 0.0,
                     "status": "NC",
@@ -412,7 +497,7 @@
                     "attendance": "green"
                 },
                 {
-                    "driver_id": "76561198998489417",
+                    "driver_id": "driver_m_gutirrez",
                     "position": 13,
                     "points": 0.0,
                     "status": "NC",
@@ -429,7 +514,7 @@
             "Posición": 1,
             "GUID": 76561198072014624,
             "Piloto/Ronda": "D. Medina",
-            "Equipo": NaN,
+            "Equipo": "Mercedes-AMG Petronas F1 Team",
             "R1": 18.0,
             "Total": 36.0,
             "R3": 18.0
@@ -438,7 +523,7 @@
             "Posición": 2,
             "GUID": 76561198341529089,
             "Piloto/Ronda": "L. Zelaya",
-            "Equipo": NaN,
+            "Equipo": "APX-GP",
             "R1": 25.0,
             "Total": 35.0,
             "R3": 10.0
@@ -447,7 +532,7 @@
             "Posición": 3,
             "GUID": 76561198108075511,
             "Piloto/Ronda": "U. Bolaños",
-            "Equipo": NaN,
+            "Equipo": "Scuderia Ferrari HP",
             "R1": 0.0,
             "Total": 25.0,
             "R3": 25.0
@@ -455,8 +540,8 @@
         {
             "Posición": 4,
             "GUID": 76561198133919909,
-            "Piloto/Ronda": "Marcelo Barquin",
-            "Equipo": NaN,
+            "Piloto/Ronda": "M. Barquin",
+            "Equipo": "Atlassian Williams Racing",
             "R1": 4.0,
             "Total": 16.0,
             "R3": 12.0
@@ -474,7 +559,7 @@
             "Posición": 6,
             "GUID": 76561198130584179,
             "Piloto/Ronda": "P. Verboonen",
-            "Equipo": NaN,
+            "Equipo": "BMW Motorsport",
             "R1": 0.0,
             "Total": 15.0,
             "R3": 15.0
@@ -483,7 +568,7 @@
             "Posición": 7,
             "GUID": 76561198106471603,
             "Piloto/Ronda": "F. Chiarotti",
-            "Equipo": NaN,
+            "Equipo": "BWT Alpine F1 Team",
             "R1": 12.0,
             "Total": 12.0,
             "R3": 0.0
@@ -491,8 +576,8 @@
         {
             "Posición": 8,
             "GUID": 76561198047561565,
-            "Piloto/Ronda": "Carlos Herrarte",
-            "Equipo": NaN,
+            "Piloto/Ronda": "C. Herrarte",
+            "Equipo": "Atlassian Williams Racing",
             "R1": 8.0,
             "Total": 12.0,
             "R3": 4.0
@@ -500,8 +585,8 @@
         {
             "Posición": 9,
             "GUID": 76561199098409330,
-            "Piloto/Ronda": "j.hernandez",
-            "Equipo": NaN,
+            "Piloto/Ronda": "J. Hernández",
+            "Equipo": "Stake F1 Team Kick Sauber",
             "R1": 6.0,
             "Total": 12.0,
             "R3": 6.0
@@ -519,7 +604,7 @@
             "Posición": 11,
             "GUID": 76561199051748324,
             "Piloto/Ronda": "S. Garza",
-            "Equipo": NaN,
+            "Equipo": "BMW Motorsport",
             "R1": 0.0,
             "Total": 8.0,
             "R3": 8.0
@@ -528,7 +613,7 @@
             "Posición": 12,
             "GUID": 76561199247430395,
             "Piloto/Ronda": "M. Chávez",
-            "Equipo": NaN,
+            "Equipo": "Visa Cash App Racing Bulls F1 Team",
             "R1": 0.0,
             "Total": 2.0,
             "R3": 2.0
@@ -537,7 +622,7 @@
             "Posición": 13,
             "GUID": 76561198119665483,
             "Piloto/Ronda": "A. Arreola",
-            "Equipo": NaN,
+            "Equipo": "APX-GP",
             "R1": 0.0,
             "Total": 1.0,
             "R3": 1.0
@@ -546,7 +631,7 @@
             "Posición": 14,
             "GUID": 76561199179027753,
             "Piloto/Ronda": "C. Ramírez",
-            "Equipo": NaN,
+            "Equipo": "Oracle Red Bull Racing",
             "R1": 0.0,
             "Total": 0.0,
             "R3": 0.0
@@ -564,104 +649,131 @@
             "Posición": 16,
             "GUID": 76561198998489417,
             "Piloto/Ronda": "M. Gutiérrez",
-            "Equipo": NaN,
+            "Equipo": "Visa Cash App Racing Bulls F1 Team",
             "R1": 0.0,
             "Total": 0.0,
             "R3": 0.0
         }
     ],
-    "standings_updated_at": "2026-02-03T20:38:16",
+    "standings_updated_at": "2026-02-03T20:57:16",
     "attendance": {
-        "76561198108075511": {
-            "3": "A",
+        "driver_c_ramrez": {
             "1": "C",
-            "2": "C"
-        },
-        "76561198072014624": {
-            "3": "A",
-            "1": "A",
-            "2": "C"
-        },
-        "76561198130584179": {
-            "3": "A",
-            "1": "C",
-            "2": "C"
-        },
-        "76561198133919909": {
-            "3": "A",
-            "1": "A",
-            "2": "C"
-        },
-        "76561198341529089": {
-            "3": "A",
-            "1": "A",
-            "2": "A"
-        },
-        "76561199051748324": {
-            "3": "A",
-            "1": "C",
-            "2": "C"
-        },
-        "76561199098409330": {
-            "3": "A",
-            "1": "A",
-            "2": "C"
-        },
-        "76561198047561565": {
-            "3": "A",
-            "1": "A",
-            "2": "A"
-        },
-        "76561199247430395": {
-            "3": "A",
-            "1": "C",
-            "2": "C"
-        },
-        "76561198119665483": {
-            "3": "A",
-            "1": "C",
-            "2": "C"
-        },
-        "76561199179027753": {
-            "3": "A",
-            "1": "C",
-            "2": "C"
-        },
-        "76561198260894482": {
-            "3": "A",
             "2": "C",
-            "1": "C"
+            "3": "A"
         },
-        "76561198998489417": {
-            "3": "A",
+        "driver_a_rendn": {
             "1": "C",
-            "2": "C"
-        },
-        "76561198347359581": {
-            "1": "A",
             "2": "A",
             "3": "C"
         },
-        "76561198106471603": {
+        "driver_u_bolaos": {
+            "1": "C",
+            "2": "C",
+            "3": "A"
+        },
+        "driver_alan_gonzalez": {
+            "1": "C",
+            "2": "C",
+            "3": "A"
+        },
+        "driver_a_arreola": {
+            "1": "C",
+            "2": "C",
+            "3": "A"
+        },
+        "driver_l_zelaya": {
             "1": "A",
+            "2": "A",
+            "3": "A"
+        },
+        "driver_d_romeo": {
+            "1": "C",
             "2": "C",
             "3": "C"
         },
-        "76561198962529406": {
+        "driver_d_medina": {
+            "1": "A",
+            "2": "C",
+            "3": "A"
+        },
+        "driver_m_gutirrez": {
+            "1": "C",
+            "2": "C",
+            "3": "A"
+        },
+        "driver_m_chvez": {
+            "1": "C",
+            "2": "C",
+            "3": "A"
+        },
+        "driver_c_herrarte": {
+            "1": "A",
+            "2": "A",
+            "3": "A"
+        },
+        "driver_m_barquin": {
+            "1": "A",
+            "2": "C",
+            "3": "A"
+        },
+        "driver_j_hernndez": {
+            "1": "A",
+            "2": "C",
+            "3": "A"
+        },
+        "driver_m_flores": {
+            "1": "C",
+            "2": "C",
+            "3": "C"
+        },
+        "driver_m_martnez": {
+            "1": "C",
+            "2": "C",
+            "3": "C"
+        },
+        "driver_f_chiarotti": {
+            "1": "A",
+            "2": "C",
+            "3": "C"
+        },
+        "driver_a_lpez": {
+            "1": "C",
+            "2": "C",
+            "3": "C"
+        },
+        "driver_r_mondragn": {
+            "1": "C",
+            "2": "C",
+            "3": "C"
+        },
+        "driver_s_garza": {
+            "1": "C",
+            "2": "C",
+            "3": "A"
+        },
+        "driver_p_verboonen": {
+            "1": "C",
+            "2": "C",
+            "3": "A"
+        },
+        "driver_franco_duran_sentey": {
             "1": "A",
             "2": "A",
             "3": "C"
         },
-        "76561199722435247": {
+        "driver_raul_pacheco": {
+            "1": "A",
             "2": "A",
             "3": "C"
         },
-        "76561198260597293": {
+        "driver_yeison_lopez": {
+            "1": "C",
             "2": "A",
             "3": "C"
         }
     },
     "penalty_points_by_round": {},
     "penalty_max": 12.0,
-    "updated_at": "2026-02-03T20:38:26"
+    "updated_at": "2026-02-03T20:58:13"
 }
