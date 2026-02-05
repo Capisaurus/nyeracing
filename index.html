@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Come pito Termo - Championship</title>
+    <title>El Memin se la come - Championship</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
     <style>
         * {
@@ -701,6 +701,139 @@
             h1 { font-size: 1.5em; }
             .chart-container { height: 300px; }
         }
+    
+
+        /* ============ Mobile responsive ============ */
+        @media (max-width: 768px) {
+            .header { padding: 18px 14px; }
+            .header h1 { font-size: 22px; }
+            .subtitle { font-size: 13px; }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+            .section { padding: 18px 14px; }
+            .insights-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+            .chart-container { height: 320px; }
+        }
+
+        @media (max-width: 480px) {
+            .stats-grid { grid-template-columns: 1fr; }
+            .insights-grid { grid-template-columns: 1fr; }
+            .header h1 { font-size: 20px; }
+        }
+
+        /* ============ Standings: 2D scroll + frozen header/driver columns ============ */
+        :root {
+            --col-pos: 56px;
+            --col-driver: 220px;
+            --col-team: 180px;
+            --col-total: 92px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 10px;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
+
+        .section-hint {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .standings-scroll {
+            max-height: 70vh;
+            overflow: auto;
+            -webkit-overflow-scrolling: touch;
+            overscroll-behavior: contain;
+            border-radius: 10px;
+            background: rgba(255,255,255,0.95);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            border: 1px solid rgba(0,0,0,0.06);
+        }
+
+        .standings-scroll:focus { outline: 2px solid rgba(51, 153, 255, 0.4); outline-offset: 2px; }
+
+        .standings-table {
+            width: max-content;
+            min-width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+        }
+
+        .standings-table th,
+        .standings-table td {
+            white-space: nowrap;
+        }
+
+        .standings-table thead th {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: linear-gradient(90deg, var(--f2-blue-dark) 0%, var(--f2-blue-medium) 100%);
+            color: var(--f2-white);
+        }
+
+        /* Fixed widths for sticky columns */
+        .standings-table .col-pos { width: var(--col-pos); min-width: var(--col-pos); max-width: var(--col-pos); }
+        .standings-table .col-driver { width: var(--col-driver); min-width: var(--col-driver); max-width: var(--col-driver); }
+        .standings-table .col-team { width: var(--col-team); min-width: var(--col-team); max-width: var(--col-team); }
+        .standings-table .col-total { width: var(--col-total); min-width: var(--col-total); max-width: var(--col-total); }
+
+        .standings-table .truncate {
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* Sticky left columns */
+        .standings-table .sticky-left-1 { position: sticky; left: 0; z-index: 40; background: rgba(255,255,255,0.98); }
+        .standings-table .sticky-left-2 { position: sticky; left: var(--col-pos); z-index: 40; background: rgba(255,255,255,0.98); }
+        .standings-table .sticky-left-3 { position: sticky; left: calc(var(--col-pos) + var(--col-driver)); z-index: 40; background: rgba(255,255,255,0.98); }
+
+        /* Make sticky header cells on the left sit above */
+        .standings-table thead .sticky-left-1,
+        .standings-table thead .sticky-left-2,
+        .standings-table thead .sticky-left-3 { z-index: 70; background: linear-gradient(90deg, var(--f2-blue-dark) 0%, var(--f2-blue-medium) 100%); }
+
+        /* Sticky right total column */
+        .standings-table .sticky-right-1 { position: sticky; right: 0; z-index: 45; }
+        .standings-table thead .sticky-right-1 { z-index: 75; }
+
+        .standings-table tbody .sticky-right-1 {
+            background: rgba(31, 58, 90, 0.96);
+            color: var(--f2-white);
+            font-weight: 800;
+        }
+
+        /* Round header styling */
+        .standings-table thead th.round-upcoming {
+            opacity: 0.7;
+        }
+
+        /* Podium rows keep sticky cells highlighted */
+        .standings-table tbody tr.podium-1 td.sticky-left-1,
+        .standings-table tbody tr.podium-1 td.sticky-left-2,
+        .standings-table tbody tr.podium-1 td.sticky-left-3 { background: rgba(255, 215, 0, 0.14); }
+
+        .standings-table tbody tr.podium-2 td.sticky-left-1,
+        .standings-table tbody tr.podium-2 td.sticky-left-2,
+        .standings-table tbody tr.podium-2 td.sticky-left-3 { background: rgba(192, 192, 192, 0.14); }
+
+        .standings-table tbody tr.podium-3 td.sticky-left-1,
+        .standings-table tbody tr.podium-3 td.sticky-left-2,
+        .standings-table tbody tr.podium-3 td.sticky-left-3 { background: rgba(205, 127, 50, 0.14); }
+
+        /* Smaller sticky widths on very small screens */
+        @media (max-width: 480px) {
+            :root {
+                --col-driver: 180px;
+                --col-team: 150px;
+            }
+            .section-hint { font-size: 11px; }
+        }
+
     </style>
 </head>
 <body>
@@ -716,7 +849,7 @@
         <main class="main-content">
             <div class="header">
                 <div class="header-content">
-                    <h1>Come pito Termo</h1>
+                    <h1>El Memin se la come</h1>
                     <p class="subtitle" id="season-subtitle">Championship Dashboard • Season 2026</p>
                 </div>
             </div>
@@ -786,27 +919,14 @@
         </div>
 
         <!-- Standings Table -->
-        <div class="section">
-            <h2 class="section-title" id="standings-title">Clasificación General</h2>
-            <div class="table-container">
-                <table>
-                    <thead id="standings-head">
-                        <tr>
-                            <th class="center">Pos</th>
-                            <th>Piloto</th>
-                            <th>Equipo</th>
-                            <th class="center">Disp.</th>
-                            <th class="center">Pen.</th>
-                            <th class="center">R1</th>
-                            <th class="center">R2</th>
-                            <th class="center">R3</th>
-                            <th class="center">R4</th>
-                            <th class="center">R5</th>
-                            <th class="center">R6</th>
-                            <th class="center">R7</th>
-                            <th class="center total-points">Total</th>
-                        </tr>
-                    </thead>
+        <div class="section" id="standings-section">
+            <div class="section-header">
+                <h2 class="section-title" id="standings-title">Clasificación General</h2>
+                <div class="section-hint">Desliza horizontal y verticalmente para ver todas las rondas.</div>
+            </div>
+            <div class="standings-scroll" id="standings-scroll" aria-label="Tabla de posiciones por ronda">
+                <table id="standings-table" class="standings-table">
+                    <thead id="standings-head"></thead>
                     <tbody id="standings-body"></tbody>
                 </table>
             </div>
@@ -1128,43 +1248,66 @@
             }
         }
 
-        function setStandingsHeader(isOverall) {
+        
+        function getRoundsMeta(races) {
+            const all = (races || []).filter(r => r && r.round !== undefined && r.round !== null);
+            const rounds = Array.from(new Set(all
+                .map(r => Number(r.round))
+                .filter(n => Number.isFinite(n))
+            )).sort((a, b) => a - b);
+
+            const completedByRound = new Map();
+            all.forEach(r => {
+                const round = Number(r.round);
+                if (!Number.isFinite(round)) return;
+                const isCompleted = !r.planned && (r.results && r.results.length > 0);
+                if (!completedByRound.has(round)) completedByRound.set(round, false);
+                if (isCompleted) completedByRound.set(round, true);
+            });
+
+            return { rounds, completedByRound };
+        }
+
+
+        function setStandingsHeader(isOverall, rounds = [], completedByRound = null) {
             const thead = document.getElementById('standings-head');
             if (!thead) return;
 
             if (isOverall) {
                 thead.innerHTML = `
                     <tr>
-                        <th class="center">Pos</th>
-                        <th>Piloto</th>
-                        <th>Equipo</th>
-                        <th class="center">Carreras</th>
-                        <th class="center">Pen.</th>
-                        <th class="center">Victorias</th>
-                        <th class="center">Podios</th>
-                        <th class="center" colspan="5">Promedio</th>
-                        <th class="center total-points">Total</th>
+                        <th class="center sticky-left-1 sticky-top col-pos">Pos</th>
+                        <th class="sticky-left-2 sticky-top col-driver truncate">Piloto</th>
+                        <th class="sticky-left-3 sticky-top col-team truncate">Equipo</th>
+                        <th class="center sticky-top">Carreras</th>
+                        <th class="center sticky-top">Pen.</th>
+                        <th class="center sticky-top">Victorias</th>
+                        <th class="center sticky-top">Podios</th>
+                        <th class="center sticky-top" colspan="5">Promedio</th>
+                        <th class="center total-points sticky-right-1 sticky-top col-total">Total</th>
                     </tr>
                 `;
-            } else {
-                thead.innerHTML = `
-                    <tr>
-                        <th class="center">Pos</th>
-                        <th>Piloto</th>
-                        <th>Equipo</th>
-                        <th class="center">Disp.</th>
-                        <th class="center">Pen.</th>
-                        <th class="center">R1</th>
-                        <th class="center">R2</th>
-                        <th class="center">R3</th>
-                        <th class="center">R4</th>
-                        <th class="center">R5</th>
-                        <th class="center">R6</th>
-                        <th class="center">R7</th>
-                        <th class="center total-points">Total</th>
-                    </tr>
-                `;
+                return;
             }
+
+            const safeRounds = (rounds || []).slice().sort((a, b) => a - b);
+            const roundsHtml = safeRounds.map(r => {
+                const done = completedByRound ? completedByRound.get(r) : true;
+                const cls = done ? '' : 'round-upcoming';
+                return `<th class="center sticky-top ${cls}">R${r}</th>`;
+            }).join('');
+
+            thead.innerHTML = `
+                <tr>
+                    <th class="center sticky-left-1 sticky-top col-pos">Pos</th>
+                    <th class="sticky-left-2 sticky-top col-driver truncate">Piloto</th>
+                    <th class="sticky-left-3 sticky-top col-team truncate">Equipo</th>
+                    <th class="center sticky-top">Disp.</th>
+                    <th class="center sticky-top">Pen.</th>
+                    ${roundsHtml}
+                    <th class="center total-points sticky-right-1 sticky-top col-total">Total</th>
+                </tr>
+            `;
         }
 
         function renderOverallStats() {
@@ -1572,9 +1715,9 @@
                     performance.completedRaces.length
                 )
             );
-
             // Update standings header and title
-            setStandingsHeader(false);
+            const roundsMeta = getRoundsMeta(data.races || []);
+            setStandingsHeader(false, roundsMeta.rounds, roundsMeta.completedByRound);
             const standingsTitle = document.getElementById('standings-title');
             if (standingsTitle) standingsTitle.textContent = isInProgress ? 'Clasificación Actual' : 'Clasificación Final';
 
@@ -1590,7 +1733,7 @@
 
             // Render all sections
             renderProgressionChart(calculatedStandings, completedRaces, isInProgress);
-            renderStandings(calculatedStandings, data.drivers, data.races, isInProgress);
+            renderStandings(calculatedStandings, data.drivers, data.races, isInProgress, roundsMeta.rounds, roundsMeta.completedByRound);
 
             if (mode !== 'home') {
                 renderDriverStats(data.drivers, data.teams, calculatedStandings, data.attendance, completedRaces.length, performance.statsByDriver);
@@ -1981,12 +2124,15 @@
             });
         }
 
-        function renderStandings(standings, drivers, races, isInProgress) {
+        function renderStandings(standings, drivers, races, isInProgress, rounds = [], completedByRound = null) {
             const tbody = document.getElementById('standings-body');
             tbody.innerHTML = '';
 
+            const safeRounds = (rounds || []).slice().sort((a, b) => a - b);
+            const totalCols = 5 + safeRounds.length + 1;
+
             if (!standings || standings.length === 0) {
-                tbody.innerHTML = '<tr><td colspan="13" class="no-data">No hay datos de clasificación</td></tr>';
+                tbody.innerHTML = `<tr><td colspan="${totalCols}" class="no-data">No hay datos de clasificación</td></tr>`;
                 return;
             }
 
@@ -2004,20 +2150,22 @@
                 if (penaltyPoints >= 10) penaltyClass = 'penalty-high';
                 else if (penaltyPoints >= 5) penaltyClass = 'penalty-medium';
 
+                const roundCells = safeRounds.map(r => {
+                    const key = 'R' + r;
+                    const done = completedByRound ? completedByRound.get(r) : true;
+                    if (!done) return `<td class="points">—</td>`;
+                    const val = row[key];
+                    return `<td class="points">${val ?? 0}</td>`;
+                }).join('');
+
                 tr.innerHTML = `
-                    <td class="position">${row['Posición']}</td>
-                    <td class="driver-name clickable" data-driver-id="${row.driverId}">${row['Piloto/Ronda']}</td>
-                    <td class="team-name">${row['Equipo'] || '-'}</td>
-                    <td class="points">${racesDisputed}</td>
-                    <td class="penalty-points ${penaltyClass}">${penaltyPoints.toFixed(1)}</td>
-                    <td class="points">${row['R1'] || 0}</td>
-                    <td class="points">${row['R2'] || 0}</td>
-                    <td class="points">${row['R3'] || 0}</td>
-                    <td class="points">${row['R4'] || 0}</td>
-                    <td class="points">${row['R5'] || 0}</td>
-                    <td class="points">${row['R6'] || 0}</td>
-                    <td class="points">${row['R7'] || 0}</td>
-                    <td class="total-points">${row['Total']}</td>
+                    <td class="position center sticky-left-1 col-pos">${row['Posición']}</td>
+                    <td class="driver-name clickable sticky-left-2 col-driver truncate" data-driver-id="${row.driverId}">${row['Piloto/Ronda']}</td>
+                    <td class="team-name sticky-left-3 col-team truncate">${row['Equipo'] || '-'}</td>
+                    <td class="points center">${racesDisputed}</td>
+                    <td class="penalty-points center ${penaltyClass}">${penaltyPoints.toFixed(1)}</td>
+                    ${roundCells}
+                    <td class="total-points center sticky-right-1 col-total">${row['Total']}</td>
                 `;
 
                 tbody.appendChild(tr);
