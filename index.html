@@ -872,6 +872,18 @@
                 <h3>Carreras</h3>
                 <div class="value" id="total-races">-</div>
             </div>
+            <div class="stat-card" style="min-width:110px;">
+                <h3>Ronda Actual</h3>
+                <div class="value" id="current-round">-</div>
+            </div>
+            <div class="stat-card" style="min-width:110px;">
+                <h3>Disputadas</h3>
+                <div class="value" id="completed-races">-</div>
+            </div>
+            <div class="stat-card" style="min-width:110px;">
+                <h3>Pendientes</h3>
+                <div class="value" id="planned-races">-</div>
+            </div>
         </div>
 
         <!-- Global Insights -->
@@ -1033,6 +1045,12 @@
                     let sidebarCollapsed = false;
                     let seasonCollapsed = false;
 
+                    // Asegura que el botón ☰ siempre sea visible y encima del sidebar
+                    sidebarToggle.style.position = 'fixed';
+                    sidebarToggle.style.left = '10px';
+                    sidebarToggle.style.top = '10px';
+                    sidebarToggle.style.zIndex = '9999';
+
                     sidebarToggle.addEventListener('click', function() {
                         sidebarCollapsed = !sidebarCollapsed;
                         if (sidebarCollapsed) {
@@ -1041,7 +1059,10 @@
                             sidebar.style.padding = '0';
                             sidebar.style.overflow = 'hidden';
                             sidebar.style.borderRight = 'none';
+                            sidebar.style.display = 'none';
+                            // El botón ☰ permanece visible
                         } else {
+                            sidebar.style.display = '';
                             sidebar.style.width = '';
                             sidebar.style.minWidth = '';
                             sidebar.style.padding = '';
@@ -1049,6 +1070,9 @@
                             sidebar.style.borderRight = '';
                         }
                     });
+
+                    // Si el usuario oculta el sidebar, el botón ☰ sigue visible y puede volver a mostrarlo
+                    // Si el usuario vuelve a hacer click, el sidebar aparece
 
                     sidebarTitle.addEventListener('click', function() {
                         seasonCollapsed = !seasonCollapsed;
