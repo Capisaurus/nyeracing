@@ -895,52 +895,157 @@
         let lastSeason = null;
         let currentStatsContext = null;
 
-        async function detectSeasons() {
-            // List of possible season files to check
-            const possibleFiles = [
-                { key: 'overall', file: 'championship_master_overall_export.json', name: 'General Histórico', isOverall: true },
-                { key: 's1', file: 'championship_master_export_s.json', name: 'Temporada 1', isOverall: false },
-                { key: 's2', file: 'championship_master_export_s2.json', name: 'Temporada 2', isOverall: false },
-                { key: 's3', file: 'championship_master_export_s3.json', name: 'Temporada 3', isOverall: false },
-                { key: 's4', file: 'championship_master_export_s4.json', name: 'Temporada 4', isOverall: false },
-                { key: 's5', file: 'championship_master_export_s5.json', name: 'Temporada 5', isOverall: false },
-                { key: 's6', file: 'championship_master_export_s6.json', name: 'Temporada 6', isOverall: false },
-                { key: 's7', file: 'championship_master_export_s7.json', name: 'Temporada 7', isOverall: false },
-                { key: 's8', file: 'championship_master_export_s8.json', name: 'Temporada 8', isOverall: false },
-                { key: 's9', file: 'championship_master_export_s9.json', name: 'Temporada 9', isOverall: false },
-                { key: 's10', file: 'championship_master_export_s10.json', name: 'Temporada 10', isOverall: false }
-            ];
+        function cleanJsonText(text) {
+            return text.replace(/:\s*NaN\s*,/g, ': null,')
+                       .replace(/:\s*NaN\s*}/g, ': null}')
+                       .replace(/:\s*NaN\s*\]/g, ': null]');
+        }
 
+        function titleCase(value) {
+            if (!value) return '';
+            return value.charAt(0).toUpperCase() + value.slice(1);
+        }
+
+        function seasonIdToFile(seasonId) {
+            if (!seasonId) return '';
+            const lower = String(seasonId).toLowerCase();
+            const isSprint = lower.includes('sprint');
+            const baseId = lower.replace('_sprint', '');
+            const parts = baseId.split('_');
+            const prefix = parts[0] || 'season';
+            const number = parts[1] || '';
+            const prefixTitle = prefix === 'series'
+                ? 'Series'
+                : prefix === 'academy'
+                    ? 'Academy'
+                    : titleCase(prefix);
+            const sprintLabel = isSprint ? 'Sprint' : '';
+            return `${prefixTitle}${number}${sprintLabel}.json`;
+        }
+
+        function seasonIdToShortLabel(seasonId) {
+            const lower = String(seasonId || '').toLowerCase();
+            const isSprint = lower.includes('sprint');
+            const baseId = lower.replace('_sprint', '');
+            const parts = baseId.split('_');
+            const prefix = parts[0] || 't';
+            const number = parts[1] || '';
+            const prefixLetter = prefix === 'series' ? 'S' : prefix === 'academy' ? 'A' : prefix.charAt(0).toUpperCase();
+            return `${prefixLetter}${number}${isSprint ? 'S' : ''}`;
+        }
+
+        function normalizeSeasonData(raw) {
+            const driversArray = Array.isArray(raw.drivers)
+                ? raw.drivers
+                : Object.values(raw.drivers || {});
+            const drivers = {};
+            const teams = {};
+
+            driversArray.forEach(driver => {
+                if (!driver || !driver.driver_id) return;
+                drivers[driver.driver_id] = driver;
+                if (driver.team_id) {
+                    teams[driver.team_id] = { name: driver.team || driver.team_id };
+                }
+            });
+
+            const races = (raw.races || []).map((race, index) => {
+                const results = (race.results || []).map(result => ({
+                    ...result,
+                    name: result.name || result.driver || ''
+                }));
+                const hasResults = results.length > 0;
+                return {
+                    ...race,
+                    results,
+                    planned: race.planned === true ? true : !hasResults,
+                    round: race.round || index + 1
+                };
+            });
+
+            return {
+                ...raw,
+                drivers,
+                teams,
+                races,
+                attendance: raw.attendance || {}
+            };
+        }
+
+        async function detectSeasons() {
             seasonsList = [];
             allData = {};
 
-            for (const season of possibleFiles) {
+            let championshipData = null;
+
+            try {
+                const response = await fetch('Championship.json');
+                if (response.ok) {
+                    const text = await response.text();
+                    championshipData = JSON.parse(cleanJsonText(text));
+                    allData.overall = championshipData;
+                }
+            } catch (error) {
+                championshipData = null;
+            }
+
+            if (!championshipData) {
+                return false;
+            }
+
+            seasonsList.push({
+                key: 'overall',
+                file: 'Championship.json',
+                name: 'Historico General',
+                isOverall: true,
+                order: -1
+            });
+
+            const seasonEntries = championshipData.seasons || [];
+
+            for (let index = 0; index < seasonEntries.length; index += 1) {
+                const season = seasonEntries[index];
+                if (!season || !season.season_id) continue;
+
+                const file = seasonIdToFile(season.season_id);
                 try {
-                    const response = await fetch(season.file);
-                    if (response.ok) {
-                        const text = await response.text();
-                        const cleanedText = text.replace(/:\s*NaN\s*,/g, ': null,')
-                                                   .replace(/:\s*NaN\s*}/g, ': null}')
-                                                   .replace(/:\s*NaN\s*\]/g, ': null]');
-                        allData[season.key] = JSON.parse(cleanedText);
-                        seasonsList.push(season);
-                        console.log(`✓ Loaded ${season.file}`);
-                    }
+                    const response = await fetch(file);
+                    if (!response.ok) continue;
+                    const text = await response.text();
+                    const raw = JSON.parse(cleanJsonText(text));
+                    allData[season.season_id] = normalizeSeasonData(raw);
+                    seasonsList.push({
+                        key: season.season_id,
+                        file,
+                        name: season.season_name || season.season_id,
+                        isOverall: false,
+                        status: season.status || '',
+                        order: index,
+                        shortLabel: seasonIdToShortLabel(season.season_id)
+                    });
                 } catch (error) {
-                    // File doesn't exist, skip it
+                    // File doesn't exist or failed to parse, skip it
                 }
             }
 
-            // Determine the last season (excluding overall)
+            try {
+                const response = await fetch('Latest.json');
+                if (response.ok) {
+                    const text = await response.text();
+                    allData.latest = JSON.parse(cleanJsonText(text));
+                }
+            } catch (error) {
+                allData.latest = null;
+            }
+
             const regularSeasons = seasonsList.filter(s => !s.isOverall);
             if (regularSeasons.length > 0) {
                 lastSeason = regularSeasons[regularSeasons.length - 1].key;
             }
 
-            // Set current season to the last one found (or first if none)
-            currentSeason = lastSeason || (seasonsList.length > 0 ? seasonsList[0].key : null);
+            currentSeason = lastSeason || (regularSeasons.length > 0 ? regularSeasons[0].key : null);
 
-            return seasonsList.length > 0;
+            return regularSeasons.length > 0;
         }
 
         async function loadAllData() {
@@ -949,7 +1054,7 @@
                 
                 if (!hasData) {
                     document.querySelector('.container').innerHTML = 
-                        '<div class="error-message">No se encontraron archivos de temporada. Asegúrate de tener al menos un archivo championship_master_export_*.json en la carpeta.</div>';
+                        '<div class="error-message">No se encontraron temporadas. Verifica que existan Championship.json y archivos Series*.json o Academy*.json en la carpeta.</div>';
                     return;
                 }
 
@@ -1028,16 +1133,22 @@
             }
 
             const isLastSeason = seasonKey === lastSeason;
-            const statusText = isLastSeason ? 'En Curso' : 'Finalizada';
+            const statusText = seasonInfo.status
+                ? (seasonInfo.status.toLowerCase() === 'finished' ? 'Finalizada' : seasonInfo.status)
+                : (isLastSeason ? 'En Curso' : 'Finalizada');
             document.getElementById('season-subtitle').textContent = `${seasonInfo.name} • ${statusText}`;
         }
 
         function isSeasonInProgress(seasonKey) {
+            const seasonInfo = seasonsList.find(s => s.key === seasonKey);
+            if (seasonInfo && seasonInfo.status) {
+                return seasonInfo.status.toLowerCase() !== 'finished';
+            }
             return seasonKey === lastSeason;
         }
 
         function setViewMode(mode) {
-            const historical = document.getElementById('historical-stats');
+            const historical = document.getElementById('historical-section');
             const teamSection = document.getElementById('team-stats-section');
             const completedSection = document.getElementById('completed-races-section');
             const plannedSection = document.getElementById('planned-section');
@@ -1312,11 +1423,18 @@
             renderRaceSelector(buildOverallRaceItems(), 'overall');
 
             // Clear other sections
-            document.getElementById('team-stats-container').innerHTML = 
-                '<div class="no-data">Vista histórica - Estadísticas por equipo disponibles en cada temporada individual</div>';
-            document.getElementById('completed-races-container').innerHTML = 
-                '<div class="no-data">Vista histórica - Detalles de carreras disponibles en cada temporada individual</div>';
-            document.getElementById('planned-section').style.display = 'none';
+            const teamContainer = document.getElementById('team-stats-container');
+            if (teamContainer) {
+                teamContainer.innerHTML = '<div class="no-data">Vista histórica - Estadísticas por equipo disponibles en cada temporada individual</div>';
+            }
+            const completedContainer = document.getElementById('completed-races-container');
+            if (completedContainer) {
+                completedContainer.innerHTML = '<div class="no-data">Vista histórica - Detalles de carreras disponibles en cada temporada individual</div>';
+            }
+            const plannedSection = document.getElementById('planned-section');
+            if (plannedSection) {
+                plannedSection.style.display = 'none';
+            }
         }
 
         function renderSeasonComparison() {
@@ -1333,7 +1451,7 @@
                 const standings = calculateStandingsFromRaces(data.races || [], data.drivers || {}, data.teams || {});
                 const leader = standings[0];
 
-                const isInProgress = season.key === lastSeason;
+                const isInProgress = isSeasonInProgress(season.key);
                 const championTitle = isInProgress ? 'Líder actual' : 'Campeón';
 
                 html += `
@@ -1398,11 +1516,9 @@
 
             // Create a timeline across all seasons
             const timeline = [];
-            const regularSeasons = seasonsList.filter(s => !s.isOverall).sort((a, b) => {
-                const numA = parseInt(a.key.substring(1));
-                const numB = parseInt(b.key.substring(1));
-                return numA - numB;
-            });
+            const regularSeasons = seasonsList
+                .filter(s => !s.isOverall)
+                .sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
 
             regularSeasons.forEach(season => {
                 const data = allData[season.key];
@@ -1413,10 +1529,10 @@
                     .sort((a, b) => a.round - b.round);
 
                 races.forEach(race => {
-                    const seasonNum = season.key.substring(1);
+                    const seasonLabel = season.shortLabel || season.name || season.key;
                     timeline.push({
-                        label: `S${seasonNum}R${race.round}`,
-                        raceId: race.id,
+                        label: `${seasonLabel}R${race.round}`,
+                        raceId: race.race_id || race.id || race.round,
                         seasonKey: season.key,
                         results: race.results
                     });
@@ -1579,7 +1695,7 @@
                 renderCompletedRaces(completedRaces, data.drivers, data.teams);
                 renderPlannedRaces(plannedRaces, isInProgress);
             } else {
-                renderLastRace(completedRaces, data.drivers, data.teams);
+                renderLastRace(completedRaces, data.drivers, data.teams, allData.latest);
             }
 
             // Last updated
@@ -1616,8 +1732,8 @@
 
                         if (!driverPoints[driverId]) {
                             driverPoints[driverId] = {
-                                name: result.name || driverId,
-                                team: '',
+                                name: result.name || result.driver || driverId,
+                                team: result.team || '',
                                 rounds: {},
                                 total: 0,
                                 racesDisputed: 0,
@@ -2006,6 +2122,7 @@
 
         function renderTeamStats(drivers, teams, standings) {
             const container = document.getElementById('team-stats-container');
+            if (!container) return;
             container.innerHTML = '';
 
             if (!teams || Object.keys(teams).length === 0) {
@@ -2077,9 +2194,10 @@
                 if (!driver) return null;
                 const teamName = driver.team_id ? (teams[driver.team_id]?.name || '-') : '-';
                 const penalty = driver.penalty_points || 0;
+                const hasAttendance = attendance && Object.keys(attendance).length > 0;
                 const attendanceRecord = attendance?.[row.driverId] || {};
                 const attended = Object.values(attendanceRecord).filter(val => val === 'A').length;
-                const attendanceText = totalRounds > 0
+                const attendanceText = hasAttendance && totalRounds > 0
                     ? `${attended}/${totalRounds} (${Math.round((attended / totalRounds) * 100)}%)`
                     : '-';
                 const perf = performanceStats?.[row.driverId] || {};
@@ -2139,8 +2257,9 @@
                     .filter(Boolean)
                     .join(', ') || '-';
 
+                const hasAttendance = attendanceTotals && Object.keys(attendanceTotals).length > 0;
                 const attended = attendanceTotals?.[driver.guid] || 0;
-                const attendanceText = totalRounds > 0
+                const attendanceText = hasAttendance && totalRounds > 0
                     ? `${attended}/${totalRounds} (${Math.round((attended / totalRounds) * 100)}%)`
                     : '-';
                 const perf = performanceStats?.[driver.guid] || {};
@@ -2173,7 +2292,7 @@
                 .sort((a, b) => a.round - b.round);
 
             return races.map(race => ({
-                id: race.id,
+                id: race.race_id || race.id || `r${race.round}`,
                 label: `R${race.round} • ${race.name}`,
                 race,
                 drivers: data.drivers,
@@ -2185,7 +2304,7 @@
             const items = [];
             const regularSeasons = seasonsList
                 .filter(s => !s.isOverall)
-                .sort((a, b) => parseInt(a.key.substring(1)) - parseInt(b.key.substring(1)));
+                .sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
 
             regularSeasons.forEach(season => {
                 const data = allData[season.key];
@@ -2196,10 +2315,10 @@
                     .sort((a, b) => a.round - b.round);
 
                 races.forEach(race => {
-                    const seasonNum = season.key.substring(1);
+                    const seasonLabel = season.shortLabel || season.name || season.key;
                     items.push({
-                        id: `${season.key}_${race.id}`,
-                        label: `S${seasonNum} R${race.round} • ${race.name}`,
+                        id: `${season.key}_${race.race_id || race.id || race.round}`,
+                        label: `${seasonLabel} R${race.round} • ${race.name}`,
                         race,
                         drivers: data.drivers,
                         teams: data.teams
@@ -2257,12 +2376,13 @@
             (race.results || []).forEach(result => {
                 const driver = drivers[result.driver_id];
                 const team = driver && driver.team_id ? teams[driver.team_id] : null;
+                const teamName = team ? team.name : (result.team || '-');
 
                 resultsHTML += `
                     <tr>
                         <td class="position">${result.position}</td>
                         <td class="driver-name">${result.name || driver?.name || 'N/A'}</td>
-                        <td class="team-name">${team ? team.name : '-'}</td>
+                        <td class="team-name">${teamName}</td>
                         <td class="points">${result.points || 0}</td>
                         <td class="points">${result.status || 'FIN'}</td>
                     </tr>
@@ -2274,10 +2394,50 @@
             container.innerHTML = resultsHTML;
         }
 
-        function renderLastRace(completedRaces, drivers, teams) {
+        function renderLastRace(completedRaces, drivers, teams, latestData = null) {
             const container = document.getElementById('last-race-container');
             if (!container) return;
             container.innerHTML = '';
+
+            if (latestData && latestData.results) {
+                const raceDate = latestData.date ? new Date(latestData.date).toLocaleDateString('es-MX', {
+                    year: 'numeric', month: 'long', day: 'numeric'
+                }) : 'Fecha no disponible';
+
+                let resultsHTML = '<div class="table-container"><table><thead><tr>' +
+                    '<th class="center">Pos</th><th>Piloto</th><th>Equipo</th>' +
+                    '<th class="center">Puntos</th><th class="center">Estado</th></tr></thead><tbody>';
+
+                (latestData.results || []).forEach(result => {
+                    resultsHTML += `
+                        <tr>
+                            <td class="position">${result.position}</td>
+                            <td class="driver-name">${result.name || 'N/A'}</td>
+                            <td class="team-name">${result.team || '-'}</td>
+                            <td class="points">${result.points || 0}</td>
+                            <td class="points">${result.status || 'FIN'}</td>
+                        </tr>
+                    `;
+                });
+
+                resultsHTML += '</tbody></table></div>';
+
+                container.innerHTML = `
+                    <div class="race-card">
+                        <h3>
+                            <span class="race-badge">R${latestData.round || '-'}</span>
+                            ${latestData.race_name || latestData.name || 'Ultima carrera'}
+                        </h3>
+                        <div class="race-info">
+                            <div class="race-info-item"><strong>Fecha:</strong> ${raceDate}</div>
+                            ${latestData.track ? `<div class="race-info-item"><strong>Circuito:</strong> ${latestData.track}</div>` : ''}
+                            <div class="race-info-item"><strong>Participantes:</strong> ${latestData.results.length}</div>
+                        </div>
+                        ${resultsHTML}
+                    </div>
+                `;
+                return;
+            }
 
             if (!completedRaces || completedRaces.length === 0) {
                 container.innerHTML = '<div class="no-data">No hay carreras disputadas</div>';
@@ -2298,12 +2458,13 @@
             (race.results || []).forEach(result => {
                 const driver = drivers[result.driver_id];
                 const team = driver && driver.team_id ? teams[driver.team_id] : null;
+                const teamName = team ? team.name : (result.team || '-');
 
                 resultsHTML += `
                     <tr>
                         <td class="position">${result.position}</td>
                         <td class="driver-name">${result.name || driver?.name || 'N/A'}</td>
-                        <td class="team-name">${team ? team.name : '-'}</td>
+                        <td class="team-name">${teamName}</td>
                         <td class="points">${result.points || 0}</td>
                         <td class="points">${result.status || 'FIN'}</td>
                     </tr>
@@ -2484,12 +2645,13 @@
                 (race.results || []).forEach(result => {
                     const driver = drivers[result.driver_id];
                     const team = driver && driver.team_id ? teams[driver.team_id] : null;
+                    const teamName = team ? team.name : (result.team || '-');
 
                     resultsHTML += `
                         <tr>
                             <td class="position">${result.position}</td>
                             <td class="driver-name">${result.name || driver?.name || 'N/A'}</td>
-                            <td class="team-name">${team ? team.name : '-'}</td>
+                            <td class="team-name">${teamName}</td>
                             <td class="points">${result.points || 0}</td>
                             <td class="points">${result.status || 'FIN'}</td>
                         </tr>
@@ -2996,7 +3158,7 @@
             });
         }
 
-        function renderSeasonData(seasonKey) {
+        function renderSeasonData(seasonKey, mode = 'season') {
             const data = allData[seasonKey];
             
             if (!data) {
@@ -3005,31 +3167,66 @@
                 return;
             }
 
+            const isInProgress = isSeasonInProgress(seasonKey);
             const completedRaces = data.races.filter(r => !r.planned && r.results && r.results.length > 0);
             const plannedRaces = data.races.filter(r => r.planned === true);
 
             const calculatedStandings = calculateStandingsFromRaces(data.races, data.drivers, data.teams);
+            const performance = buildRacePerformanceStats(data.races || []);
+            const seasonInfo = seasonsList.find(s => s.key === seasonKey);
 
-            // Update stats
-            document.getElementById('current-round').textContent = data.current_round || 0;
+            setStatCardTitles(isInProgress ? 'season' : 'season-finished');
+
+            document.getElementById('current-round').textContent = data.disputed_rounds || completedRaces.length;
             document.getElementById('total-drivers').textContent = Object.keys(data.drivers || {}).length;
             document.getElementById('completed-races').textContent = completedRaces.length;
-            document.getElementById('planned-races').textContent = plannedRaces.length;
+            document.getElementById('planned-races').textContent = isInProgress
+                ? (data.pending_rounds ?? plannedRaces.length)
+                : (data.total_rounds || data.races.length);
             document.getElementById('total-teams').textContent = Object.keys(data.teams || {}).length;
-            document.getElementById('total-races').textContent = data.races.length;
+            document.getElementById('total-races').textContent = data.total_rounds || data.races.length;
 
-            // Render all sections
-            renderProgressionChart(calculatedStandings, completedRaces);
-            renderStandings(calculatedStandings, data.drivers, data.races);
-            renderTeamStats(data.drivers, data.teams, calculatedStandings);
-            renderCompletedRaces(completedRaces, data.drivers, data.teams);
-            renderPlannedRaces(plannedRaces);
+            renderGlobalInsights(performance, seasonInfo?.name || 'Temporada');
+            renderLeaderInsights(
+                buildLeaderInsights(
+                    performance.statsByDriver,
+                    (driverId) => data.drivers?.[driverId]?.name || driverId,
+                    performance.completedRaces.length
+                )
+            );
 
-            // Last updated
-            if (data.standings_updated_at) {
-                const date = new Date(data.standings_updated_at);
+            setStandingsHeader(false);
+            const standingsTitle = document.getElementById('standings-title');
+            if (standingsTitle) standingsTitle.textContent = isInProgress ? 'Clasificacion Actual' : 'Clasificacion Final';
+
+            currentStatsContext = {
+                mode: 'season',
+                seasonKey,
+                data,
+                standings: calculatedStandings,
+                totalRounds: completedRaces.length,
+                driverPerformance: performance.statsByDriver
+            };
+
+            renderProgressionChart(calculatedStandings, completedRaces, isInProgress);
+            renderStandings(calculatedStandings, data.drivers, data.races, isInProgress);
+
+            if (mode !== 'home') {
+                renderDriverStats(data.drivers, data.teams, calculatedStandings, data.attendance, completedRaces.length, performance.statsByDriver);
+                renderAttendanceTable(data.drivers, data.teams, data.attendance, completedRaces.length);
+                renderSuperlicenseTable(data.drivers, data.teams);
+                renderRaceSelector(buildSeasonRaceItems(data), seasonKey);
+                renderTeamStats(data.drivers, data.teams, calculatedStandings);
+                renderCompletedRaces(completedRaces, data.drivers, data.teams);
+                renderPlannedRaces(plannedRaces);
+            } else {
+                renderLastRace(completedRaces, data.drivers, data.teams, allData.latest);
+            }
+
+            if (data.exported_at) {
+                const date = new Date(data.exported_at);
                 document.getElementById('last-updated').textContent = 
-                    `Última actualización: ${date.toLocaleString('es-MX', {
+                    `Ultima actualizacion: ${date.toLocaleString('es-MX', {
                         year: 'numeric', month: 'long', day: 'numeric',
                         hour: '2-digit', minute: '2-digit'
                     })}`;
@@ -3059,8 +3256,8 @@
 
                         if (!driverPoints[driverId]) {
                             driverPoints[driverId] = {
-                                name: result.name || driverId,
-                                team: '',
+                                name: result.name || result.driver || driverId,
+                                team: result.team || '',
                                 rounds: {},
                                 total: 0,
                                 racesDisputed: 0,
@@ -3237,6 +3434,7 @@
 
         function renderTeamStats(drivers, teams, standings) {
             const container = document.getElementById('team-stats-container');
+            if (!container) return;
             container.innerHTML = '';
 
             if (!teams || Object.keys(teams).length === 0) {
@@ -3319,12 +3517,13 @@
                 (race.results || []).forEach(result => {
                     const driver = drivers[result.driver_id];
                     const team = driver && driver.team_id ? teams[driver.team_id] : null;
+                    const teamName = team ? team.name : (result.team || '-');
 
                     resultsHTML += `
                         <tr>
                             <td class="position">${result.position}</td>
                             <td class="driver-name">${result.name || driver?.name || 'N/A'}</td>
-                            <td class="team-name">${team ? team.name : '-'}</td>
+                            <td class="team-name">${teamName}</td>
                             <td class="points">${result.points || 0}</td>
                             <td class="points">${result.status || 'FIN'}</td>
                         </tr>
@@ -3353,6 +3552,8 @@
         function renderPlannedRaces(races) {
             const container = document.getElementById('planned-races-container');
             const section = document.getElementById('planned-section');
+            if (!container || !section) return;
+            if (!container || !section) return;
 
             if (races.length === 0) {
                 section.style.display = 'none';
