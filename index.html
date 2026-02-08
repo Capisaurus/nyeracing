@@ -1734,8 +1734,7 @@
                 if (statCards[0]) statCards[0].textContent = 'Rondas Totales';
                 if (statCards[1]) statCards[1].textContent = 'Total Pilotos';
                 if (statCards[2]) statCards[2].textContent = 'Carreras Disputadas';
-                if (statCards[3]) statCards[3].textContent = 'Rondas Totales';
-                if (statCards[4]) statCards[4].textContent = 'Equipos';
+                if (statCards[3]) statCards[3].textContent = 'Equipos';
                 // Eliminada la sexta tarjeta
             } else {
                 if (statCards[0]) statCards[0].textContent = 'Ronda Actual';
@@ -1875,12 +1874,13 @@
 
             // Update stats cards
             setStatCardTitles('overall');
-            document.getElementById('current-round').textContent = regularSeasons.length;
-            document.getElementById('total-drivers').textContent = totalDriversEver.size;
-            document.getElementById('completed-races').textContent = totalRaces;
-            document.getElementById('planned-races').textContent = completedSeasons.length;
-            document.getElementById('total-teams').textContent = allTeams.size;
-            document.getElementById('total-races').textContent = totalRaces;
+            const el = id => document.getElementById(id);
+            if (el('current-round')) el('current-round').textContent = regularSeasons.length;
+            if (el('total-drivers')) el('total-drivers').textContent = totalDriversEver.size;
+            if (el('completed-races')) el('completed-races').textContent = totalRaces;
+            if (el('planned-races')) el('planned-races').textContent = completedSeasons.length;
+            if (el('total-teams')) el('total-teams').textContent = allTeams.size;
+            if (el('total-races')) el('total-races').textContent = totalRaces;
 
             // Update standings header and title
             setStandingsHeader(true);
@@ -2198,12 +2198,13 @@
             // Update stats cards with proper labels
             setStatCardTitles(isInProgress ? 'season' : 'season-finished');
 
-            document.getElementById('current-round').textContent = data.current_round || completedRaces.length;
-            document.getElementById('total-drivers').textContent = Object.keys(data.drivers || {}).length;
-            document.getElementById('completed-races').textContent = completedRaces.length;
-            document.getElementById('planned-races').textContent = isInProgress ? plannedRaces.length : data.races.length;
-            document.getElementById('total-teams').textContent = Object.keys(data.teams || {}).length;
-            // Eliminada la tarjeta 'total-races', no actualizar
+            const el = id => document.getElementById(id);
+            if (el('current-round')) el('current-round').textContent = data.current_round || completedRaces.length;
+            if (el('total-drivers')) el('total-drivers').textContent = Object.keys(data.drivers || {}).length;
+            if (el('completed-races')) el('completed-races').textContent = completedRaces.length;
+            if (el('planned-races')) el('planned-races').textContent = isInProgress ? plannedRaces.length : data.races.length;
+            if (el('total-teams')) el('total-teams').textContent = Object.keys(data.teams || {}).length;
+            if (el('total-races')) el('total-races').textContent = data.races.length;
 
             renderGlobalInsights(performance, seasonInfo?.name || 'Temporada');
             renderLeaderInsights(
