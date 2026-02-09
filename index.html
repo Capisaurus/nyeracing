@@ -1290,12 +1290,7 @@
             </div>
         </details>
 
-        <details class="section-details" id="planned-section">
-            <summary>Próximas Carreras</summary>
-            <div class="section-body">
-                <div id="planned-races-container"></div>
-            </div>
-        </details>
+
 
         <details class="section-details" id="progression-section">
             <summary>Progresión del Campeonato</summary>
@@ -1364,16 +1359,7 @@
             </div>
         </details>
 
-        <details class="section-details" id="race-selector-section">
-            <summary>Resultados por carrera</summary>
-            <div class="section-body">
-                <div class="race-selector">
-                    <label for="race-select" class="race-select-label">Selecciona una carrera</label>
-                    <select id="race-select" class="nav-select"></select>
-                </div>
-                <div id="race-results-container"></div>
-            </div>
-        </details>
+
 
         <details class="section-details" id="completed-races-section">
             <summary>Carreras disputadas</summary>
@@ -1709,7 +1695,7 @@
             const historical = document.getElementById('historical-section');
             const teamSection = document.getElementById('team-stats-section');
             const completedSection = document.getElementById('completed-races-section');
-            const plannedSection = document.getElementById('planned-section');
+            const plannedSection = document.getElementById('upcoming-calendar-section');
             const driverSection = document.getElementById('driver-stats-section');
             const attendanceSection = document.getElementById('attendance-section');
             const superlicenseSection = document.getElementById('superlicense-section');
@@ -1756,6 +1742,12 @@
                 if (upcomingCalSection) upcomingCalSection.style.display = 'none';
                 if (progressionSection) progressionSection.style.display = 'block';
             } else {
+                // Detectar si la temporada está finalizada
+                let isFinished = false;
+                const seasonInfo = seasonsList.find(s => s.key === currentSeason);
+                if (seasonInfo && seasonInfo.status && seasonInfo.status.toLowerCase() === 'finished') {
+                    isFinished = true;
+                }
                 if (overviewContainer) overviewContainer.style.display = 'none';
                 if (statsGrid) statsGrid.style.display = 'grid';
                 if (globalInsights) globalInsights.style.display = 'block';
@@ -1763,7 +1755,7 @@
                 if (historical) historical.style.display = 'none';
                 if (teamSection) teamSection.style.display = 'block';
                 if (completedSection) completedSection.style.display = 'block';
-                if (plannedSection) plannedSection.style.display = 'block';
+                if (plannedSection) plannedSection.style.display = isFinished ? 'none' : 'block';
                 if (driverSection) driverSection.style.display = 'block';
                 if (attendanceSection) attendanceSection.style.display = 'block';
                 if (superlicenseSection) superlicenseSection.style.display = 'block';
@@ -2640,13 +2632,20 @@
                 };
             });
 
-            const ctx = document.getElementById('progressionChart');
-            if (!ctx) return;
-            if (progressionChart) progressionChart.destroy();
+            // Reparar: asegurar que el canvas esté limpio y visible
+            const container = document.getElementById('progression-chart-container');
+            if (!container) return;
+            let ctx = document.getElementById('progressionChart');
+            if (!ctx) {
+                container.innerHTML = '<canvas id="progressionChart"></canvas>';
+                ctx = document.getElementById('progressionChart');
+            }
+            if (progressionChart) {
+                progressionChart.destroy();
+                progressionChart = null;
+            }
 
-            const chartTitle = isInProgress ? 'Progresión del Campeonato (En Curso)' : 'Progresión del Campeonato (Finalizado)';
-
-            progressionChart = new Chart(ctx, {
+            progressionChart = new Chart(ctx.getContext('2d'), {
                 type: 'line',
                 data: {
                     labels: rounds.map(r => 'R' + r),
@@ -3539,9 +3538,14 @@
             html += '<div class="overview-card">';
             html += '<div class="overview-card-header next-race">Proxima Carrera</div>';
             if (nextRace) {
+                // Calcular días hasta la siguiente carrera usando horario de México
                 const rDate = new Date(nextRace.date);
+                // Convertir la fecha actual a horario de México (America/Mexico_City)
                 const now = new Date();
-                const daysUntil = Math.ceil((rDate - now) / (1000 * 60 * 60 * 24));
+                const nowMexico = new Date(now.toLocaleString('en-US', { timeZone: 'America/Mexico_City' }));
+                const rDateMexico = new Date(rDate.toLocaleString('en-US', { timeZone: 'America/Mexico_City' }));
+                const msPerDay = 1000 * 60 * 60 * 24;
+                const daysUntil = Math.ceil((rDateMexico - nowMexico) / msPerDay);
 
                 html += `
                     <div class="overview-card-body">
