@@ -3696,60 +3696,7 @@
         setInterval(loadAllData, 120000);
     </script>
 </body>
-</html>
-            // === UPCOMING CALENDAR ===
-            if (currentActiveData && currentActiveData.races) {
-                const allRaces = currentActiveData.races;
-                const plannedRaces = allRaces.filter(r => r.planned);
-                if (plannedRaces.length > 0) {
-                    // Find the next upcoming race
-                    const now = new Date();
-                    let nextRoundNum = null;
-                    for (const race of plannedRaces) {
-                        if (race.date && new Date(race.date) >= now) {
-                            nextRoundNum = race.round;
-                            break;
-                        }
-                    }
-
-                    html += `
-                        <div class="overview-card full-width">
-                            <div class="overview-card-header">Calendario ${currentActiveSeason.name}</div>
-                            <div class="overview-card-body">
-                                <div class="overview-calendar-grid">
-                                    ${plannedRaces.map(race => `
-                                        <div class="overview-calendar-item${race.round === nextRoundNum ? ' next-up' : ''}">
-                                            <div class="overview-calendar-round">${race.round === nextRoundNum ? 'PROXIMA - ' : ''}R${race.round}</div>
-                                            <div class="overview-calendar-name">${race.name}</div>
-                                            <div class="overview-calendar-track">${race.track}</div>
-                                            <div class="overview-calendar-date">${formatRaceDate(race.date)}</div>
-                                        </div>
-                                    `).join('')}
-                                </div>
-                            </div>
-                        </div>
-                    `;
-                }
-            }
-
-            // === LAST UPDATED ===
-            const exportedAt = championship?.exported_at || currentActiveData?.exported_at;
-            if (exportedAt) {
-                const date = new Date(exportedAt);
-                html += `<p class="last-updated">Ultima actualizacion: ${date.toLocaleString('es-MX', {
-                    year: 'numeric', month: 'long', day: 'numeric',
-                    hour: '2-digit', minute: '2-digit'
-                })}</p>`;
-            }
-
-            container.innerHTML = html;
-        }
-
-        loadAllData();
-        setInterval(loadAllData, 120000);
-    </script>
-</body>
-</html>
+ </html>
             // === UPCOMING CALENDAR ===
             if (currentActiveData && currentActiveData.races) {
                 const allRaces = currentActiveData.races;
