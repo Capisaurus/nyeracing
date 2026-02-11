@@ -1,6 +1,6 @@
 {
     "export_type": "season",
-    "championship_name": "NyE Series",
+    "championship_name": "ne series",
     "season_id": "series_6",
     "season_name": "Series 6",
     "total_rounds": 12,
@@ -158,7 +158,7 @@
                     "position": 19,
                     "driver": "Kion343",
                     "driver_id": "kion343",
-                    "team": "Reserve Driver",
+                    "team": "Reserva",
                     "points": 0.0,
                     "status": "DNF"
                 }
@@ -291,7 +291,7 @@
                     "position": 15,
                     "driver": "Kion343",
                     "driver_id": "kion343",
-                    "team": "Reserve Driver",
+                    "team": "Reserva",
                     "points": 0.0,
                     "status": ""
                 },
@@ -456,7 +456,7 @@
                     "position": 16,
                     "driver": "Kion343",
                     "driver_id": "kion343",
-                    "team": "Reserve Driver",
+                    "team": "Reserva",
                     "points": 0.0,
                     "status": "DNF"
                 }
@@ -597,7 +597,7 @@
                     "position": 16,
                     "driver": "Kion343",
                     "driver_id": "kion343",
-                    "team": "Reserve Driver",
+                    "team": "Reserva",
                     "points": 0.0,
                     "status": "DNF"
                 }
@@ -626,7 +626,7 @@
                     "position": 2,
                     "driver": "Yavi",
                     "driver_id": "yavi",
-                    "team": "Reserve Driver",
+                    "team": "Reserva",
                     "points": 19.0,
                     "status": ""
                 },
@@ -1147,7 +1147,7 @@
                     "position": 10,
                     "driver": "P4ndy",
                     "driver_id": "p4ndy",
-                    "team": "Reserve Driver",
+                    "team": "Reserva",
                     "points": 1.0,
                     "status": ""
                 },
@@ -1155,7 +1155,7 @@
                     "position": 11,
                     "driver": "GetMatWolf",
                     "driver_id": "getmatwolf",
-                    "team": "Reserve Driver",
+                    "team": "Reserva",
                     "points": 0.0,
                     "status": ""
                 },
@@ -1280,7 +1280,7 @@
                     "position": 6,
                     "driver": "Ghost",
                     "driver_id": "ghost",
-                    "team": "Reserve Driver",
+                    "team": "Reserva",
                     "points": 8.0,
                     "status": ""
                 },
@@ -1304,7 +1304,7 @@
                     "position": 9,
                     "driver": "SGC Lionel",
                     "driver_id": "sgc_lionel",
-                    "team": "Reserve Driver",
+                    "team": "Reserva",
                     "points": 2.0,
                     "status": ""
                 },
@@ -1429,7 +1429,7 @@
                     "position": 8,
                     "driver": "SGC Lionel",
                     "driver_id": "sgc_lionel",
-                    "team": "Reserve Driver",
+                    "team": "Reserva",
                     "points": 12.0,
                     "status": ""
                 },
@@ -1507,6 +1507,8 @@
                 }
             },
             "wins": 6,
+            "sprint_wins": 0,
+            "poles": 0,
             "podiums": 8,
             "fastest_laps": 6,
             "driver_of_the_day": 0,
@@ -1580,6 +1582,8 @@
                 }
             },
             "wins": 3,
+            "sprint_wins": 1,
+            "poles": 0,
             "podiums": 7,
             "fastest_laps": 0,
             "driver_of_the_day": 0,
@@ -1658,6 +1662,8 @@
                 }
             },
             "wins": 0,
+            "sprint_wins": 0,
+            "poles": 0,
             "podiums": 3,
             "fastest_laps": 0,
             "driver_of_the_day": 2,
@@ -1736,6 +1742,8 @@
                 }
             },
             "wins": 0,
+            "sprint_wins": 0,
+            "poles": 0,
             "podiums": 3,
             "fastest_laps": 1,
             "driver_of_the_day": 0,
@@ -1809,6 +1817,8 @@
                 }
             },
             "wins": 0,
+            "sprint_wins": 0,
+            "poles": 0,
             "podiums": 2,
             "fastest_laps": 1,
             "driver_of_the_day": 0,
@@ -1877,6 +1887,8 @@
                 }
             },
             "wins": 1,
+            "sprint_wins": 0,
+            "poles": 0,
             "podiums": 3,
             "fastest_laps": 1,
             "driver_of_the_day": 0,
@@ -1918,6 +1930,8 @@
                 }
             },
             "wins": 0,
+            "sprint_wins": 1,
+            "poles": 0,
             "podiums": 4,
             "fastest_laps": 1,
             "driver_of_the_day": 0,
@@ -2001,6 +2015,8 @@
                 }
             },
             "wins": 0,
+            "sprint_wins": 0,
+            "poles": 0,
             "podiums": 0,
             "fastest_laps": 0,
             "driver_of_the_day": 1,
@@ -2042,6 +2058,8 @@
                 }
             },
             "wins": 2,
+            "sprint_wins": 0,
+            "poles": 0,
             "podiums": 2,
             "fastest_laps": 1,
             "driver_of_the_day": 0,
@@ -2095,6 +2113,8 @@
                 }
             },
             "wins": 0,
+            "sprint_wins": 0,
+            "poles": 0,
             "podiums": 0,
             "fastest_laps": 0,
             "driver_of_the_day": 0,
@@ -2153,6 +2173,8 @@
                 }
             },
             "wins": 0,
+            "sprint_wins": 0,
+            "poles": 0,
             "podiums": 0,
             "fastest_laps": 0,
             "driver_of_the_day": 1,
@@ -2226,6 +2248,8 @@
                 }
             },
             "wins": 0,
+            "sprint_wins": 0,
+            "poles": 0,
             "podiums": 1,
             "fastest_laps": 0,
             "driver_of_the_day": 1,
@@ -2309,6 +2333,8 @@
                 }
             },
             "wins": 0,
+            "sprint_wins": 0,
+            "poles": 0,
             "podiums": 1,
             "fastest_laps": 0,
             "driver_of_the_day": 0,
@@ -2355,6 +2381,8 @@
                 }
             },
             "wins": 0,
+            "sprint_wins": 0,
+            "poles": 0,
             "podiums": 1,
             "fastest_laps": 2,
             "driver_of_the_day": 1,
@@ -2396,6 +2424,8 @@
                 }
             },
             "wins": 0,
+            "sprint_wins": 0,
+            "poles": 0,
             "podiums": 0,
             "fastest_laps": 0,
             "driver_of_the_day": 0,
@@ -2409,7 +2439,7 @@
         {
             "driver_id": "yavi",
             "name": "Yavi",
-            "team": "Reserve Driver",
+            "team": "Reserva",
             "team_id": "team_reserve_driver",
             "total_points": 19.0,
             "rounds": {
@@ -2420,20 +2450,22 @@
                 }
             },
             "wins": 0,
+            "sprint_wins": 0,
+            "poles": 0,
             "podiums": 1,
             "fastest_laps": 1,
             "driver_of_the_day": 0,
             "teams_history": [
                 {
                     "team_id": "team_reserve_driver",
-                    "team_name": "Reserve Driver"
+                    "team_name": "Reserva"
                 }
             ]
         },
         {
             "driver_id": "sgc_lionel",
             "name": "SGC Lionel",
-            "team": "Reserve Driver",
+            "team": "Reserva",
             "team_id": "team_reserve_driver",
             "total_points": 14.0,
             "rounds": {
@@ -2449,13 +2481,15 @@
                 }
             },
             "wins": 0,
+            "sprint_wins": 0,
+            "poles": 0,
             "podiums": 0,
             "fastest_laps": 0,
             "driver_of_the_day": 0,
             "teams_history": [
                 {
                     "team_id": "team_reserve_driver",
-                    "team_name": "Reserve Driver"
+                    "team_name": "Reserva"
                 }
             ]
         },
@@ -2490,6 +2524,8 @@
                 }
             },
             "wins": 0,
+            "sprint_wins": 0,
+            "poles": 0,
             "podiums": 0,
             "fastest_laps": 0,
             "driver_of_the_day": 0,
@@ -2546,6 +2582,8 @@
                 }
             },
             "wins": 0,
+            "sprint_wins": 0,
+            "poles": 0,
             "podiums": 0,
             "fastest_laps": 0,
             "driver_of_the_day": 0,
@@ -2559,7 +2597,7 @@
         {
             "driver_id": "ghost",
             "name": "Ghost",
-            "team": "Reserve Driver",
+            "team": "Reserva",
             "team_id": "team_reserve_driver",
             "total_points": 8.0,
             "rounds": {
@@ -2570,13 +2608,15 @@
                 }
             },
             "wins": 0,
+            "sprint_wins": 0,
+            "poles": 0,
             "podiums": 0,
             "fastest_laps": 0,
             "driver_of_the_day": 0,
             "teams_history": [
                 {
                     "team_id": "team_reserve_driver",
-                    "team_name": "Reserve Driver"
+                    "team_name": "Reserva"
                 }
             ]
         },
@@ -2608,6 +2648,8 @@
                 }
             },
             "wins": 0,
+            "sprint_wins": 0,
+            "poles": 0,
             "podiums": 0,
             "fastest_laps": 0,
             "driver_of_the_day": 0,
@@ -2671,6 +2713,8 @@
                 }
             },
             "wins": 0,
+            "sprint_wins": 0,
+            "poles": 0,
             "podiums": 0,
             "fastest_laps": 0,
             "driver_of_the_day": 0,
@@ -2684,7 +2728,7 @@
         {
             "driver_id": "p4ndy",
             "name": "P4ndy",
-            "team": "Reserve Driver",
+            "team": "Reserva",
             "team_id": "team_reserve_driver",
             "total_points": 1.0,
             "rounds": {
@@ -2697,13 +2741,15 @@
                 }
             },
             "wins": 0,
+            "sprint_wins": 0,
+            "poles": 0,
             "podiums": 0,
             "fastest_laps": 0,
             "driver_of_the_day": 0,
             "teams_history": [
                 {
                     "team_id": "team_reserve_driver",
-                    "team_name": "Reserve Driver"
+                    "team_name": "Reserva"
                 }
             ]
         },
@@ -2723,6 +2769,8 @@
                 }
             },
             "wins": 0,
+            "sprint_wins": 0,
+            "poles": 0,
             "podiums": 0,
             "fastest_laps": 0,
             "driver_of_the_day": 0,
@@ -2736,7 +2784,7 @@
         {
             "driver_id": "getmatwolf",
             "name": "GetMatWolf",
-            "team": "Reserve Driver",
+            "team": "Reserva",
             "team_id": "team_reserve_driver",
             "total_points": 0.0,
             "rounds": {
@@ -2749,13 +2797,15 @@
                 }
             },
             "wins": 0,
+            "sprint_wins": 0,
+            "poles": 0,
             "podiums": 0,
             "fastest_laps": 0,
             "driver_of_the_day": 0,
             "teams_history": [
                 {
                     "team_id": "team_reserve_driver",
-                    "team_name": "Reserve Driver"
+                    "team_name": "Reserva"
                 }
             ]
         },
@@ -2778,6 +2828,8 @@
                 }
             },
             "wins": 0,
+            "sprint_wins": 0,
+            "poles": 0,
             "podiums": 0,
             "fastest_laps": 0,
             "driver_of_the_day": 1,
@@ -2819,13 +2871,15 @@
                 }
             },
             "wins": 0,
+            "sprint_wins": 0,
+            "poles": 0,
             "podiums": 0,
             "fastest_laps": 0,
             "driver_of_the_day": 0,
             "teams_history": [
                 {
                     "team_id": "team_reserve_driver",
-                    "team_name": "Reserve Driver"
+                    "team_name": "Reserva"
                 }
             ]
         },
@@ -2843,6 +2897,8 @@
                 }
             },
             "wins": 0,
+            "sprint_wins": 0,
+            "poles": 0,
             "podiums": 0,
             "fastest_laps": 0,
             "driver_of_the_day": 0,
@@ -2869,6 +2925,8 @@
                 }
             },
             "wins": 0,
+            "sprint_wins": 0,
+            "poles": 0,
             "podiums": 0,
             "fastest_laps": 0,
             "driver_of_the_day": 0,
@@ -2880,5 +2938,5 @@
             ]
         }
     ],
-    "exported_at": "2026-02-10T18:40:16"
+    "exported_at": "2026-02-11T15:10:50"
 }

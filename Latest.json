@@ -1,6 +1,6 @@
 {
     "export_type": "race",
-    "championship_name": "NyE Series",
+    "championship_name": "ne series",
     "season_id": "series_6",
     "season_name": "",
     "race_id": "220",
@@ -135,7 +135,7 @@
         {
             "driver_id": "sgc_lionel",
             "name": "SGC Lionel",
-            "team": "Reserve Driver",
+            "team": "Reserva",
             "position": 8,
             "points": 12.0,
             "status": "",
@@ -185,5 +185,5 @@
         }
     ],
     "sprint_results": [],
-    "exported_at": "2026-02-10T18:40:17"
+    "exported_at": "2026-02-11T15:10:50"
 }
