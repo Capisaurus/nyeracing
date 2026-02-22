@@ -1456,6 +1456,7 @@
         {
             "driver_id": "mtsfrg",
             "name": "Ulises",
+            "number": "",
             "team": "Haas",
             "team_id": "team_haas",
             "total_points": 245.0,
@@ -1516,6 +1517,7 @@
         {
             "driver_id": "sz_angel",
             "name": "Sz Angel",
+            "number": "",
             "team": "Mercedes",
             "team_id": "team_mercedes",
             "total_points": 220.0,
@@ -1585,6 +1587,7 @@
         {
             "driver_id": "leozever",
             "name": "Leozever",
+            "number": "",
             "team": "Williams",
             "team_id": "team_williams",
             "total_points": 132.0,
@@ -1659,6 +1662,7 @@
         {
             "driver_id": "puffy",
             "name": "Puffy",
+            "number": "44",
             "team": "Haas",
             "team_id": "team_haas",
             "total_points": 132.0,
@@ -1733,6 +1737,7 @@
         {
             "driver_id": "termopolio",
             "name": "Termopolio",
+            "number": "",
             "team": "Red Bull",
             "team_id": "team_red_bull",
             "total_points": 104.0,
@@ -1802,6 +1807,7 @@
         {
             "driver_id": "tgoou",
             "name": "Tgoou",
+            "number": "",
             "team": "Mercedes",
             "team_id": "team_mercedes",
             "total_points": 87.0,
@@ -1866,6 +1872,7 @@
         {
             "driver_id": "dragon6590z",
             "name": "Dragon6590z",
+            "number": "",
             "team": "Alpine",
             "team_id": "team_alpine",
             "total_points": 81.0,
@@ -1903,6 +1910,7 @@
         {
             "driver_id": "memingow",
             "name": "Memingow",
+            "number": "",
             "team": "Red Bull",
             "team_id": "team_red_bull",
             "total_points": 74.0,
@@ -1982,6 +1990,7 @@
         {
             "driver_id": "ar2d2",
             "name": "Ar2D2",
+            "number": "",
             "team": "Alpine",
             "team_id": "team_alpine",
             "total_points": 71.0,
@@ -2019,6 +2028,7 @@
         {
             "driver_id": "gabriel.b01",
             "name": "Gabriel.b01",
+            "number": "",
             "team": "Sauber",
             "team_id": "team_sauber",
             "total_points": 52.0,
@@ -2068,6 +2078,7 @@
         {
             "driver_id": "aaronxob",
             "name": "Aaronxob",
+            "number": "",
             "team": "McLaren",
             "team_id": "team_mclaren",
             "total_points": 50.0,
@@ -2122,6 +2133,7 @@
         {
             "driver_id": "siegerng",
             "name": "SiegerNG",
+            "number": "",
             "team": "Aston Martin",
             "team_id": "team_aston_martin",
             "total_points": 45.0,
@@ -2191,6 +2203,7 @@
         {
             "driver_id": "capisaurus",
             "name": "Capisaurus",
+            "number": "76",
             "team": "Ferrari",
             "team_id": "team_ferrari",
             "total_points": 44.0,
@@ -2270,6 +2283,7 @@
         {
             "driver_id": "pina",
             "name": "Pina",
+            "number": "",
             "team": "Sauber",
             "team_id": "team_sauber",
             "total_points": 41.0,
@@ -2312,6 +2326,7 @@
         {
             "driver_id": "connor",
             "name": "Connor",
+            "number": "",
             "team": "Sauber",
             "team_id": "team_sauber",
             "total_points": 22.0,
@@ -2349,6 +2364,7 @@
         {
             "driver_id": "yavi",
             "name": "Yavi",
+            "number": "",
             "team": "Reserva",
             "team_id": "team_reserve_driver",
             "total_points": 19.0,
@@ -2369,6 +2385,7 @@
         {
             "driver_id": "sgc_lionel",
             "name": "SGC Lionel",
+            "number": "",
             "team": "Reserva",
             "team_id": "team_reserve_driver",
             "total_points": 14.0,
@@ -2394,6 +2411,7 @@
         {
             "driver_id": "jesus_2zirete",
             "name": "Jesús 2zirete",
+            "number": "",
             "team": "Racing Bulls",
             "team_id": "team_racing_bulls",
             "total_points": 12.0,
@@ -2431,6 +2449,7 @@
         {
             "driver_id": "chokogarcia",
             "name": "Chokogarcia",
+            "number": "",
             "team": "Williams",
             "team_id": "team_williams",
             "total_points": 11.0,
@@ -2483,6 +2502,7 @@
         {
             "driver_id": "ghost",
             "name": "Ghost",
+            "number": "",
             "team": "Reserva",
             "team_id": "team_reserve_driver",
             "total_points": 8.0,
@@ -2503,6 +2523,7 @@
         {
             "driver_id": "gioxr",
             "name": "GioXr",
+            "number": "",
             "team": "Aston Martin",
             "team_id": "team_aston_martin",
             "total_points": 8.0,
@@ -2537,6 +2558,7 @@
         {
             "driver_id": "anboo_03",
             "name": "Anboo_03",
+            "number": "",
             "team": "McLaren",
             "team_id": "team_mclaren",
             "total_points": 5.0,
@@ -2596,6 +2618,7 @@
         {
             "driver_id": "p4ndy",
             "name": "P4ndy",
+            "number": "",
             "team": "Reserva",
             "team_id": "team_reserve_driver",
             "total_points": 1.0,
@@ -2618,6 +2641,7 @@
         {
             "driver_id": "crossdragon",
             "name": "CrossDragon",
+            "number": "",
             "team": "Alpine",
             "team_id": "team_alpine",
             "total_points": 0.0,
@@ -2640,6 +2664,7 @@
         {
             "driver_id": "getmatwolf",
             "name": "GetMatWolf",
+            "number": "",
             "team": "Reserva",
             "team_id": "team_reserve_driver",
             "total_points": 0.0,
@@ -2662,6 +2687,7 @@
         {
             "driver_id": "izquierdoxdd",
             "name": "Izquierdoxdd",
+            "number": "",
             "team": "Ferrari",
             "team_id": "team_ferrari",
             "total_points": 0.0,
@@ -2687,6 +2713,7 @@
         {
             "driver_id": "kion343",
             "name": "Kion343",
+            "number": "",
             "team": "Reserva",
             "team_id": "team_reserve_driver",
             "total_points": 0.0,
@@ -2724,6 +2751,7 @@
         {
             "driver_id": "lucifergv",
             "name": "LuciferGv",
+            "number": "",
             "team": "Racing Bulls",
             "team_id": "team_racing_bulls",
             "total_points": 0.0,
@@ -2744,6 +2772,7 @@
         {
             "driver_id": "oskkker",
             "name": "Oskkker",
+            "number": "",
             "team": "Alpine",
             "team_id": "team_alpine",
             "total_points": 0.0,
@@ -2764,5 +2793,5 @@
             "driver_of_the_day": 0
         }
     ],
-    "exported_at": "2026-02-21T19:26:22"
+    "exported_at": "2026-02-21T19:40:26"
 }
