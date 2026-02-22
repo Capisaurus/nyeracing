@@ -1490,13 +1490,7 @@
             "poles": 0,
             "podiums": 6,
             "fastest_laps": 1,
-            "driver_of_the_day": 5,
-            "teams_history": [
-                {
-                    "team_id": "team_ferrari",
-                    "team_name": "Ferrari"
-                }
-            ]
+            "driver_of_the_day": 5
         },
         {
             "driver_id": "steelwarrior",
@@ -1571,13 +1565,7 @@
             "poles": 0,
             "podiums": 9,
             "fastest_laps": 2,
-            "driver_of_the_day": 0,
-            "teams_history": [
-                {
-                    "team_id": "team_mclaren",
-                    "team_name": "McLaren"
-                }
-            ]
+            "driver_of_the_day": 0
         },
         {
             "driver_id": "mrstevehyuga",
@@ -1627,19 +1615,13 @@
             "poles": 0,
             "podiums": 7,
             "fastest_laps": 3,
-            "driver_of_the_day": 1,
-            "teams_history": [
-                {
-                    "team_id": "team_haas",
-                    "team_name": "Haas"
-                }
-            ]
+            "driver_of_the_day": 1
         },
         {
             "driver_id": "alexmatrix266",
             "name": "AlexMatrix266",
-            "team": "Williams",
-            "team_id": "team_williams",
+            "team": "Haas",
+            "team_id": "team_haas",
             "total_points": 141.0,
             "rounds": {
                 "4": {
@@ -1693,19 +1675,13 @@
             "poles": 0,
             "podiums": 6,
             "fastest_laps": 1,
-            "driver_of_the_day": 0,
-            "teams_history": [
-                {
-                    "team_id": "team_haas",
-                    "team_name": "Haas"
-                }
-            ]
+            "driver_of_the_day": 0
         },
         {
             "driver_id": "izquierdoxdd",
             "name": "Izquierdoxdd",
-            "team": "Alfa Romeo",
-            "team_id": "team_alfa_romeo",
+            "team": "Aston Martin",
+            "team_id": "team_aston_martin",
             "total_points": 132.0,
             "rounds": {
                 "1": {
@@ -1784,19 +1760,13 @@
             "poles": 0,
             "podiums": 1,
             "fastest_laps": 1,
-            "driver_of_the_day": 0,
-            "teams_history": [
-                {
-                    "team_id": "team_aston_martin",
-                    "team_name": "Aston Martin"
-                }
-            ]
+            "driver_of_the_day": 0
         },
         {
             "driver_id": "capisaurus",
             "name": "Capisaurus",
-            "team": "McLaren",
-            "team_id": "team_mclaren",
+            "team": "Aston Martin",
+            "team_id": "team_aston_martin",
             "total_points": 112.0,
             "rounds": {
                 "1": {
@@ -1870,13 +1840,7 @@
             "poles": 0,
             "podiums": 2,
             "fastest_laps": 0,
-            "driver_of_the_day": 1,
-            "teams_history": [
-                {
-                    "team_id": "team_aston_martin",
-                    "team_name": "Aston Martin"
-                }
-            ]
+            "driver_of_the_day": 1
         },
         {
             "driver_id": "drasticalrose",
@@ -1911,13 +1875,7 @@
             "poles": 0,
             "podiums": 4,
             "fastest_laps": 2,
-            "driver_of_the_day": 2,
-            "teams_history": [
-                {
-                    "team_id": "team_reserve_driver",
-                    "team_name": "Reserva"
-                }
-            ]
+            "driver_of_the_day": 2
         },
         {
             "driver_id": "dr.maziozare",
@@ -1977,13 +1935,7 @@
             "poles": 0,
             "podiums": 2,
             "fastest_laps": 0,
-            "driver_of_the_day": 0,
-            "teams_history": [
-                {
-                    "team_id": "team_alfa_romeo",
-                    "team_name": "Alfa Romeo"
-                }
-            ]
+            "driver_of_the_day": 0
         },
         {
             "driver_id": "gozark",
@@ -2028,19 +1980,13 @@
             "poles": 0,
             "podiums": 2,
             "fastest_laps": 2,
-            "driver_of_the_day": 0,
-            "teams_history": [
-                {
-                    "team_id": "team_mclaren",
-                    "team_name": "McLaren"
-                }
-            ]
+            "driver_of_the_day": 0
         },
         {
             "driver_id": "nosoyyo98",
             "name": "NoSoyYo98",
-            "team": "Reserva",
-            "team_id": "team_reserve_driver",
+            "team": "Mercedes",
+            "team_id": "team_mercedes",
             "total_points": 67.0,
             "rounds": {
                 "2": {
@@ -2074,19 +2020,13 @@
             "poles": 0,
             "podiums": 3,
             "fastest_laps": 1,
-            "driver_of_the_day": 0,
-            "teams_history": [
-                {
-                    "team_id": "team_mercedes",
-                    "team_name": "Mercedes"
-                }
-            ]
+            "driver_of_the_day": 0
         },
         {
             "driver_id": "memingow",
             "name": "Memingow",
-            "team": "Aston Martin",
-            "team_id": "team_aston_martin",
+            "team": "Williams",
+            "team_id": "team_williams",
             "total_points": 43.0,
             "rounds": {
                 "1": {
@@ -2165,19 +2105,13 @@
             "poles": 0,
             "podiums": 0,
             "fastest_laps": 0,
-            "driver_of_the_day": 2,
-            "teams_history": [
-                {
-                    "team_id": "team_williams",
-                    "team_name": "Williams"
-                }
-            ]
+            "driver_of_the_day": 2
         },
         {
             "driver_id": "hector_zambrano",
             "name": "Hector Zambrano",
-            "team": "Mercedes",
-            "team_id": "team_mercedes",
+            "team": "Red Bull",
+            "team_id": "team_red_bull",
             "total_points": 24.0,
             "rounds": {
                 "1": {
@@ -2236,13 +2170,7 @@
             "poles": 0,
             "podiums": 0,
             "fastest_laps": 0,
-            "driver_of_the_day": 0,
-            "teams_history": [
-                {
-                    "team_id": "team_red_bull",
-                    "team_name": "Red Bull"
-                }
-            ]
+            "driver_of_the_day": 0
         },
         {
             "driver_id": "thepredator",
@@ -2272,13 +2200,7 @@
             "poles": 0,
             "podiums": 0,
             "fastest_laps": 0,
-            "driver_of_the_day": 0,
-            "teams_history": [
-                {
-                    "team_id": "team_mercedes",
-                    "team_name": "Mercedes"
-                }
-            ]
+            "driver_of_the_day": 0
         },
         {
             "driver_id": "chuky",
@@ -2343,19 +2265,13 @@
             "poles": 0,
             "podiums": 0,
             "fastest_laps": 0,
-            "driver_of_the_day": 0,
-            "teams_history": [
-                {
-                    "team_id": "team_williams",
-                    "team_name": "Williams"
-                }
-            ]
+            "driver_of_the_day": 0
         },
         {
             "driver_id": "cienfuegosj23",
             "name": "Cienfuegosj23",
-            "team": "Reserva",
-            "team_id": "team_reserve_driver",
+            "team": "Ferrari",
+            "team_id": "team_ferrari",
             "total_points": 16.0,
             "rounds": {
                 "1": {
@@ -2394,19 +2310,13 @@
             "poles": 0,
             "podiums": 0,
             "fastest_laps": 0,
-            "driver_of_the_day": 0,
-            "teams_history": [
-                {
-                    "team_id": "team_ferrari",
-                    "team_name": "Ferrari"
-                }
-            ]
+            "driver_of_the_day": 0
         },
         {
             "driver_id": "victor_xd",
             "name": "Victor xd",
-            "team": "Williams",
-            "team_id": "team_williams",
+            "team": "Reserva",
+            "team_id": "team_reserve_driver",
             "total_points": 12.0,
             "rounds": {
                 "2": {
@@ -2440,17 +2350,7 @@
             "poles": 0,
             "podiums": 0,
             "fastest_laps": 0,
-            "driver_of_the_day": 2,
-            "teams_history": [
-                {
-                    "team_id": "team_red_bull",
-                    "team_name": "Red Bull"
-                },
-                {
-                    "team_id": "team_reserve_driver",
-                    "team_name": "Reserva"
-                }
-            ]
+            "driver_of_the_day": 2
         },
         {
             "driver_id": "laluz",
@@ -2475,13 +2375,7 @@
             "poles": 0,
             "podiums": 0,
             "fastest_laps": 0,
-            "driver_of_the_day": 0,
-            "teams_history": [
-                {
-                    "team_id": "team_alpine",
-                    "team_name": "Alpine"
-                }
-            ]
+            "driver_of_the_day": 0
         },
         {
             "driver_id": "josshammet13",
@@ -2501,13 +2395,7 @@
             "poles": 0,
             "podiums": 0,
             "fastest_laps": 0,
-            "driver_of_the_day": 0,
-            "teams_history": [
-                {
-                    "team_id": "team_red_bull",
-                    "team_name": "Red Bull"
-                }
-            ]
+            "driver_of_the_day": 0
         },
         {
             "driver_id": "dobler",
@@ -2527,19 +2415,13 @@
             "poles": 0,
             "podiums": 0,
             "fastest_laps": 1,
-            "driver_of_the_day": 0,
-            "teams_history": [
-                {
-                    "team_id": "team_mclaren",
-                    "team_name": "McLaren"
-                }
-            ]
+            "driver_of_the_day": 0
         },
         {
             "driver_id": "kion343",
             "name": "Kion343",
-            "team": "Williams",
-            "team_id": "team_williams",
+            "team": "Reserva",
+            "team_id": "team_reserve_driver",
             "total_points": 2.0,
             "rounds": {
                 "12": {
@@ -2558,13 +2440,7 @@
             "poles": 0,
             "podiums": 0,
             "fastest_laps": 0,
-            "driver_of_the_day": 0,
-            "teams_history": [
-                {
-                    "team_id": "team_reserve_driver",
-                    "team_name": "Reserva"
-                }
-            ]
+            "driver_of_the_day": 0
         },
         {
             "driver_id": "extrim",
@@ -2584,13 +2460,21 @@
             "poles": 0,
             "podiums": 0,
             "fastest_laps": 0,
-            "driver_of_the_day": 0,
-            "teams_history": [
-                {
-                    "team_id": "team_red_bull",
-                    "team_name": "Red Bull"
-                }
-            ]
+            "driver_of_the_day": 0
+        },
+        {
+            "driver_id": "gamecomics07",
+            "name": "Gamecomics07",
+            "team": "Haas",
+            "team_id": "team_haas",
+            "total_points": 0.0,
+            "rounds": {},
+            "wins": 0,
+            "sprint_wins": 0,
+            "poles": 0,
+            "podiums": 0,
+            "fastest_laps": 0,
+            "driver_of_the_day": 0
         },
         {
             "driver_id": "panchito",
@@ -2610,13 +2494,7 @@
             "poles": 0,
             "podiums": 0,
             "fastest_laps": 0,
-            "driver_of_the_day": 0,
-            "teams_history": [
-                {
-                    "team_id": "team_mclaren",
-                    "team_name": "McLaren"
-                }
-            ]
+            "driver_of_the_day": 0
         },
         {
             "driver_id": "tobert",
@@ -2636,13 +2514,7 @@
             "poles": 0,
             "podiums": 0,
             "fastest_laps": 0,
-            "driver_of_the_day": 0,
-            "teams_history": [
-                {
-                    "team_id": "team_alpine",
-                    "team_name": "Alpine"
-                }
-            ]
+            "driver_of_the_day": 0
         },
         {
             "driver_id": "urielcito",
@@ -2662,13 +2534,7 @@
             "poles": 0,
             "podiums": 0,
             "fastest_laps": 0,
-            "driver_of_the_day": 0,
-            "teams_history": [
-                {
-                    "team_id": "team_alphatauri",
-                    "team_name": "AlphaTauri"
-                }
-            ]
+            "driver_of_the_day": 0
         },
         {
             "driver_id": "rabs0728",
@@ -2688,14 +2554,8 @@
             "poles": 0,
             "podiums": 0,
             "fastest_laps": 0,
-            "driver_of_the_day": 0,
-            "teams_history": [
-                {
-                    "team_id": "team_alphatauri",
-                    "team_name": "AlphaTauri"
-                }
-            ]
+            "driver_of_the_day": 0
         }
     ],
-    "exported_at": "2026-02-21T18:26:18"
+    "exported_at": "2026-02-21T19:26:20"
 }
